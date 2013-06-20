@@ -1,0 +1,111 @@
+[23-May-2011 09:56:17] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:56:17] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:56:17] gs -sOutputFile=/home/nhsnutri/public_html/gc/243/1J6wyLBdedc.jpg -sDEVICE=jpeg -r300 -dNOPAUSE -dBATCH /home/nhsnutri/public_html/gc/243/1J6wyLBdedc.ps
+[23-May-2011 09:56:17] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:56:17] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:56:17] composite -blend 80 /home/nhsnutri/public_html/images/giftcertificate.gif -geometry +678+865 /home/nhsnutri/public_html/gc/243/1J6wyLBdedc.jpg /home/nhsnutri/public_html/gc/243/4c2dXe1d1B0L2y3w265J01.jpg
+[23-May-2011 09:56:20] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:56:20] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:56:21] 
+[23-May-2011 09:59:54] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:59:54] PHP Warning:  Invalid argument supplied for foreach() in /home/nhsnutri/public_html/includes/functions/gc_output.php on line 45
+[23-May-2011 09:59:54] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:59:54] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:59:54] gs -sOutputFile=/home/nhsnutri/public_html/gc/243/1hzyPVqnTl5.jpg -sDEVICE=jpeg -r300 -dNOPAUSE -dBATCH /home/nhsnutri/public_html/gc/243/1hzyPVqnTl5.ps
+[23-May-2011 09:59:54] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:59:54] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:59:54] composite -blend 80 /home/nhsnutri/public_html/images/giftcertificate.gif -geometry +678+865 /home/nhsnutri/public_html/gc/243/1hzyPVqnTl5.jpg /home/nhsnutri/public_html/gc/243/452lXT1n1q0V2P3y2z5h01.jpg
+[23-May-2011 09:59:54] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:59:54] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:59:54] 
+[23-May-2011 10:29:02] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:29:02] PHP Warning:  Invalid argument supplied for foreach() in /home/nhsnutri/public_html/includes/functions/gc_output.php on line 45
+[23-May-2011 10:29:02] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:29:02] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:29:02] gs -sOutputFile=/home/nhsnutri/public_html/gc/243/1y96fpnGwPb.jpg -sDEVICE=jpeg -r300 -dNOPAUSE -dBATCH /home/nhsnutri/public_html/gc/243/1y96fpnGwPb.ps
+[23-May-2011 10:29:02] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:29:02] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:29:02] composite -blend 80 /home/nhsnutri/public_html/images/giftcertificate.gif -geometry +678+865 /home/nhsnutri/public_html/gc/243/1y96fpnGwPb.jpg /home/nhsnutri/public_html/gc/243/4b2PXw1G1n0p2f36295y01.jpg
+[23-May-2011 10:29:02] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:29:02] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:29:02] 
+[23-May-2011 10:29:06] PHP Warning:  main(includes/counter.php) [<a href='function.main'>function.main</a>]: failed to open stream: No such file or directory in /home/nhsnutri/public_html/includes/footer.php on line 13
+[23-May-2011 10:29:06] PHP Warning:  main(includes/counter.php) [<a href='function.main'>function.main</a>]: failed to open stream: No such file or directory in /home/nhsnutri/public_html/includes/footer.php on line 13
+[23-May-2011 10:29:06] PHP Fatal error:  main() [<a href='function.require'>function.require</a>]: Failed opening required 'includes/counter.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nhsnutri/public_html/includes/footer.php on line 13
+[23-May-2011 10:35:04] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:35:04] PHP Warning:  Invalid argument supplied for foreach() in /home/nhsnutri/public_html/includes/functions/gc_output.php on line 45
+[23-May-2011 10:35:04] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:35:04] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:35:04] gs -sOutputFile=/home/nhsnutri/public_html/gc/243/1VdncPFPM9J.jpg -sDEVICE=jpeg -r300 -dNOPAUSE -dBATCH /home/nhsnutri/public_html/gc/243/1VdncPFPM9J.ps
+[23-May-2011 10:35:04] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:35:04] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:35:04] composite -blend 80 /home/nhsnutri/public_html/images/giftcertificate.gif -geometry +678+865 /home/nhsnutri/public_html/gc/243/1VdncPFPM9J.jpg /home/nhsnutri/public_html/gc/243/4J29XM1P1F0P2c3n2d5V01.jpg
+[23-May-2011 10:35:04] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:35:04] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:35:04] 
+[23-May-2011 10:36:57] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:36:57] PHP Warning:  Invalid argument supplied for foreach() in /home/nhsnutri/public_html/includes/functions/gc_output.php on line 45
+[23-May-2011 10:36:57] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:36:57] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:36:57] gs -sOutputFile=/home/nhsnutri/public_html/gc/243/1ql79HCr6Gj.jpg -sDEVICE=jpeg -r300 -dNOPAUSE -dBATCH /home/nhsnutri/public_html/gc/243/1ql79HCr6Gj.ps
+[23-May-2011 10:36:57] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:36:57] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:36:57] composite -blend 80 /home/nhsnutri/public_html/images/giftcertificate.gif -geometry +678+865 /home/nhsnutri/public_html/gc/243/1ql79HCr6Gj.jpg /home/nhsnutri/public_html/gc/243/4j2GX61r1C0H29372l5q01.jpg
+[23-May-2011 10:36:57] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:36:57] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:36:57] 
+[23-May-2011 10:37:00] PHP Warning:  main(includes/counter.php) [<a href='function.main'>function.main</a>]: failed to open stream: No such file or directory in /home/nhsnutri/public_html/includes/footer.php on line 13
+[23-May-2011 10:37:00] PHP Warning:  main(includes/counter.php) [<a href='function.main'>function.main</a>]: failed to open stream: No such file or directory in /home/nhsnutri/public_html/includes/footer.php on line 13
+[23-May-2011 10:37:00] PHP Fatal error:  main() [<a href='function.require'>function.require</a>]: Failed opening required 'includes/counter.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nhsnutri/public_html/includes/footer.php on line 13
+[23-May-2011 10:40:20] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:40:20] PHP Warning:  Invalid argument supplied for foreach() in /home/nhsnutri/public_html/includes/functions/gc_output.php on line 45
+[23-May-2011 10:40:20] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:40:20] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:40:20] gs -sOutputFile=/home/nhsnutri/public_html/gc/243/1D0mqHeCkzF.jpg -sDEVICE=jpeg -r300 -dNOPAUSE -dBATCH /home/nhsnutri/public_html/gc/243/1D0mqHeCkzF.ps
+[23-May-2011 10:40:20] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:40:20] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:40:20] composite -blend 80 /home/nhsnutri/public_html/images/giftcertificate.gif -geometry +678+865 /home/nhsnutri/public_html/gc/243/1D0mqHeCkzF.jpg /home/nhsnutri/public_html/gc/243/4F2zXk1C1e0H2q3m205D01.jpg
+[23-May-2011 10:40:20] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:40:20] /home/nhsnutri/public_html/gc/243
+[23-May-2011 10:40:20] 
+[23-May-2011 10:40:26] PHP Warning:  main(includes/counter.php) [<a href='function.main'>function.main</a>]: failed to open stream: No such file or directory in /home/nhsnutri/public_html/includes/footer.php on line 13
+[23-May-2011 10:40:26] PHP Warning:  main(includes/counter.php) [<a href='function.main'>function.main</a>]: failed to open stream: No such file or directory in /home/nhsnutri/public_html/includes/footer.php on line 13
+[23-May-2011 10:40:26] PHP Fatal error:  main() [<a href='function.require'>function.require</a>]: Failed opening required 'includes/counter.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nhsnutri/public_html/includes/footer.php on line 13
+[23-May-2011 17:41:30] /home/nhsnutri/public_html/gc/243
+[23-May-2011 17:41:30] PHP Warning:  Invalid argument supplied for foreach() in /home/nhsnutri/public_html/includes/functions/gc_output.php on line 45
+[23-May-2011 17:41:30] /home/nhsnutri/public_html/gc/243
+[23-May-2011 17:41:30] /home/nhsnutri/public_html/gc/243
+[23-May-2011 17:41:30] gs -sOutputFile=/home/nhsnutri/public_html/gc/243/1ZjUHqygp28.jpg -sDEVICE=jpeg -r300 -dNOPAUSE -dBATCH /home/nhsnutri/public_html/gc/243/1ZjUHqygp28.ps
+[23-May-2011 17:41:30] /home/nhsnutri/public_html/gc/243
+[23-May-2011 17:41:30] /home/nhsnutri/public_html/gc/243
+[23-May-2011 17:41:30] composite -blend 80 /home/nhsnutri/public_html/images/giftcertificate.gif -geometry +678+865 /home/nhsnutri/public_html/gc/243/1ZjUHqygp28.jpg /home/nhsnutri/public_html/gc/243/4822Xp1g1y0q2H3U2j5Z01.jpg
+[23-May-2011 17:41:32] /home/nhsnutri/public_html/gc/243
+[23-May-2011 17:41:32] /home/nhsnutri/public_html/gc/243
+[23-May-2011 17:41:32] 
+[23-May-2011 17:43:03] /home/nhsnutri/public_html/gc/243
+[23-May-2011 17:43:03] PHP Warning:  Invalid argument supplied for foreach() in /home/nhsnutri/public_html/includes/functions/gc_output.php on line 45
+[23-May-2011 17:43:03] /home/nhsnutri/public_html/gc/243
+[23-May-2011 17:43:03] /home/nhsnutri/public_html/gc/243
+[23-May-2011 17:43:03] gs -sOutputFile=/home/nhsnutri/public_html/gc/243/1pHXKYxWAZG.jpg -sDEVICE=jpeg -r300 -dNOPAUSE -dBATCH /home/nhsnutri/public_html/gc/243/1pHXKYxWAZG.ps
+[23-May-2011 17:43:03] /home/nhsnutri/public_html/gc/243
+[23-May-2011 17:43:03] /home/nhsnutri/public_html/gc/243
+[23-May-2011 17:43:03] composite -blend 80 /home/nhsnutri/public_html/images/giftcertificate.gif -geometry +678+865 /home/nhsnutri/public_html/gc/243/1pHXKYxWAZG.jpg /home/nhsnutri/public_html/gc/243/4G2ZXA1W1x0Y2K3X2H5p01.jpg
+[23-May-2011 17:43:03] /home/nhsnutri/public_html/gc/243
+[23-May-2011 17:43:03] /home/nhsnutri/public_html/gc/243
+[23-May-2011 17:43:03] 
+[23-May-2011 17:43:05] PHP Warning:  main(includes/counter.php) [<a href='function.main'>function.main</a>]: failed to open stream: No such file or directory in /home/nhsnutri/public_html/includes/footer.php on line 13
+[23-May-2011 17:43:05] PHP Warning:  main(includes/counter.php) [<a href='function.main'>function.main</a>]: failed to open stream: No such file or directory in /home/nhsnutri/public_html/includes/footer.php on line 13
+[23-May-2011 17:43:05] PHP Fatal error:  main() [<a href='function.require'>function.require</a>]: Failed opening required 'includes/counter.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nhsnutri/public_html/includes/footer.php on line 13
+[23-May-2011 18:00:52] /home/nhsnutri/public_html/gc/243
+[23-May-2011 18:00:52] /home/nhsnutri/public_html/gc/243
+[23-May-2011 18:00:52] /home/nhsnutri/public_html/gc/243
+[23-May-2011 18:00:52] gs -sOutputFile=/home/nhsnutri/public_html/gc/243/1pDVEYC6RCQ.jpg -sDEVICE=jpeg -r300 -dNOPAUSE -dBATCH /home/nhsnutri/public_html/gc/243/1pDVEYC6RCQ.ps
+[23-May-2011 18:00:52] /home/nhsnutri/public_html/gc/243
+[23-May-2011 18:00:52] /home/nhsnutri/public_html/gc/243
+[23-May-2011 18:00:52] composite -blend 80 /home/nhsnutri/public_html/images/giftcertificate.gif -geometry +678+865 /home/nhsnutri/public_html/gc/243/1pDVEYC6RCQ.jpg /home/nhsnutri/public_html/gc/243/4Q2CXR161C0Y2E3V2D5p01.jpg
+[23-May-2011 18:00:53] /home/nhsnutri/public_html/gc/243
+[23-May-2011 18:00:53] /home/nhsnutri/public_html/gc/243
+[23-May-2011 18:00:54] 
+[23-May-2011 18:00:57] PHP Warning:  main(includes/counter.php) [<a href='function.main'>function.main</a>]: failed to open stream: No such file or directory in /home/nhsnutri/public_html/includes/footer.php on line 13
+[23-May-2011 18:00:57] PHP Warning:  main(includes/counter.php) [<a href='function.main'>function.main</a>]: failed to open stream: No such file or directory in /home/nhsnutri/public_html/includes/footer.php on line 13
+[23-May-2011 18:00:57] PHP Fatal error:  main() [<a href='function.require'>function.require</a>]: Failed opening required 'includes/counter.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nhsnutri/public_html/includes/footer.php on line 13

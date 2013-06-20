@@ -1,0 +1,80 @@
+ 
+
+
+
+http://docs.fckeditor.net/FCKeditor_2.x/Developers_Guide/Configuration/Built_in_File_Browser
+
+
+
+ver temas "Integrating the File Browser" y  "Uploading Files" en 
+
+
+
+
+
+http://www.msbware.com/articles/php/integrating_fckeditor_with_your_mysql_database.html
+
+
+
+aqui me ayudaron con hacer una base de datos para grabar los html
+
+
+
+
+
+base de datos :
+
+
+
+CREATE TABLE `fck_data` ( 
+
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY , 
+
+`data` TEXT NOT NULL 
+
+) ENGINE = MYISAM ; 
+
+
+
+https://p3smysqladmin01.secureserver.net/p41/95/
+
+
+
+localhost : p41mysql95.secureserver.net
+
+
+
+base de datos: fck_database
+
+
+
+usuario : fck_database
+
+
+
+clave :kikErve1204
+
+
+
+
+
+AQUI FUNCIONA:
+
+
+
+EDITOR : http://www.paprikaperu.com/fckeditor/index.php
+
+
+
+SALIDA : http://www.paprikaperu.com/fckeditor/salida.php
+
+
+
+SALIDA DENTRO DE UN WEBSITE : http://www.paprikaperu.com/fckeditor/salida2.php
+
+
+
+archivos que no son de fckeditor, es decir son del website de prueba que fue faith satelite radio:
+
+styles.css, header5, header4_r11_c1, carpeta adoptaparish y salida2
+

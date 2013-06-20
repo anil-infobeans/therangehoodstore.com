@@ -1,0 +1,82 @@
+%!PS-ADOBE 3.0 EPSF-3.0
+%%Title: c00001.eps
+%%Creator: (c)Ken Owen 2008
+%%Creationdate: Mon Jan 28 2008
+%%BoundingBox: 12 600 600 356
+
+gsave
+%%set border color and colored type color
+%/bordercolor {1 0 0 0} def
+%/typecolor {1 .6 0 .4} def
+%/giftcopy {(A Special Gift for You!)} def
+BORDERCOLOR
+TYPECOLOR
+GIFTCOPY
+/typesize 12 def
+/smalltype 10 def
+/bordercol{
+	bordercolor setcmykcolor
+}def
+/typecol{
+        typecolor setcmykcolor
+}def
+/whitecol {
+	0 0 0 0 setcmykcolor
+} def
+/coloredtype {
+	/ystart exch def /xstart exch def /colstring exch def
+	/Times-BoldItalic findfont typesize scalefont setfont
+	typecol
+	xstart ystart moveto
+	colstring show
+} def
+/regtype {
+	/ystart exch def /xstart exch def /regstring exch def
+	/Times-Italic findfont typesize scalefont setfont
+	1 1 1 1 setcmykcolor
+	xstart ystart moveto
+	regstring show
+} def
+/smalltypeshow {
+	/ystart exch def /xstart exch def /regstring exch def
+        /Times-Italic findfont smalltype scalefont setfont
+        1 1 1 1 setcmykcolor
+        xstart ystart moveto
+        regstring show
+} def
+/rect {
+	/rectheight exch def /rectwidth exch def /uly exch def /ulx exch def
+	ulx uly moveto
+	rectwidth 0 rlineto 0 -rextheight rlineto -rectwidth 0 rlineto closepath
+	fill
+}
+%%set scale and translation
+12 600 translate
+%%set default type style and size
+%%gc has default colors for the border and colored type and place holders for the seven strings
+%%draw the border and the white center
+bordercol 
+0 0 moveto
+588 0 rlineto
+0 -244 rlineto
+-588 0 rlineto
+closepath fill
+whitecol 
+30 -12 moveto
+528 0 rlineto
+0 -220 rlineto
+-528 0 rlineto
+closepath fill
+0 0 moveto
+giftcopy 42 -104 coloredtype
+(TO) 42 -144 regtype
+(FROM) 42 -160 regtype
+(AMOUNT) 42 -176 regtype
+(MESSAGE) 42 -192 regtype
+(DATEOFISSUE) 350 -120 coloredtype
+(CERTIFICATECODE) 350 -156 coloredtype
+(EXPIRATIONDATE) 350 -216 smalltypeshow
+showpage
+grestore
+%%trailer
+%%EOF

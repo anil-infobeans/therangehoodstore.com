@@ -1,0 +1,173 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>  
+<?php
+/**
+ * Template for Mage_Page_Block_Html
+ */
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->getLang() ?>" lang="<?php echo $this->getLang() ?>">
+<head>
+<?php echo $this->getChildHtml('head') ?>
+</head>
+<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+<?php echo $this->getChildHtml('after_body_start') ?>
+<div class="wrapper">
+    <?php echo $this->getChildHtml('global_notices') ?>
+    <div class="page">
+        <?php echo $this->getChildHtml('header') ?>
+        
+        
+        
+        
+        <div class="main-container col2-left-layout">
+            <div class="main">
+             <div class="cat_feature">
+            <?php echo $this->getChildHtml('breadcrumbs') ?>
+            <div>
+<style type="text/css">
+.category {
+    margin: 10px 0 0;
+    padding: 0;
+}
+.main {
+    margin: 0;
+}
+.toolbar {
+    display: none;
+}
+.product_range_sec{ display: none;}
+</style>
+  <script type="text/javascript" src="js/homeRotator.js?timestamp=<?php echo (int)(time()/86400)?>"></script>
+  </div>
+  <div class="welcome_sec">
+        <div class="left">
+            <div class="heading">
+                <div class="had_txt">Welcome To The Range Hood Store
+                
+                </div>
+            </div>
+            <div class="text">
+                   <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('welcome-home-page')->toHtml(); ?> 
+            </div>
+            <div><a href="<?php echo $this->getUrl('main-page');?>"><img src="<?php echo $this->getSkinUrl('') ?>images/raed_more.png" alt="" border="0" /></a></div>
+        </div>
+       <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('home-free-shipping-box')->toHtml(); ?>
+        <div class="clear"></div>
+    </div>
+            
+                
+                               
+                   <div class="cat_left"> <?php echo $this->getChildHtml('left') ?>                 
+                  <div class="clear"></div>
+                 <?php //echo $this->getLayout()->createBlock('cms/block')->setBlockId('send-us-picture')->toHtml(); ?>
+                 <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('find-your-stylish')->toHtml(); ?>
+                 <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('style-and-reliability')->toHtml(); ?> 
+               
+              </div>
+                
+                <div class="cat_right">              
+                    <?php echo $this->getChildHtml('global_messages') ?>
+                    <?php echo $this->getChildHtml('content') ?>
+                </div>
+                 <div class="clear"></div>
+               
+            </div> </div>
+        </div>
+        
+        
+        
+        
+        <script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jquery.cycle.all.js'); ?>"></script>
+        <div class="range_hod">
+        <div class="heading">
+            <div class="had_txt">Range HooD Categories</div>
+        </div>
+				
+				<?php 
+					$category_ids = array(0=>'3',1=>'10');
+					foreach($category_ids as $id)
+					{ ?>
+						<div class="hood_section">
+						<?php 
+								$parent = $id;
+								$subcategoryCollection = Mage::getModel('catalog/category')->getCollection()->addAttributeToFilter('parent_id', $parent)->addIsActiveFilter()->setPageSize(5);	
+									$coun_cate= 1;
+								foreach($subcategoryCollection as $subcate)
+								{
+									$_category = Mage::getModel('catalog/category')->load($subcate->getEntityId());
+									$url = $this->getUrl($_category->getUrlPath());
+									$products = Mage::getResourceModel('catalog/product_collection')->addCategoryFilter($_category)->setPageSize(6);
+								?>
+									<div class="product">
+										<div>
+											<a class="hover-twink" href="<?php echo $url; ?>" id="effect_<?php echo $coun_cate; ?>">
+													<?php 
+															$counter = 1;
+															foreach($products as $product) {
+																$_product = Mage::getModel('catalog/product')->load($product->getEntityId());		
+																$baseImage = Mage::helper('catalog/image')->init($_product, 'image')->resize(135); ?>
+																<img src="<?php echo $baseImage; ?>" id="" alt="<?php echo $_product->getName(); ?>" class="<?php if($counter > 1){echo 'no-display';} ?>"></img>
+													<?php 
+													$counter++;
+													} ?>
+											</a> 
+										</div>
+										<div class="text" style="padding-left:10px;"><a  href="<?php echo $url; ?>"><?php echo $_category->getName(); ?></a></div>
+									</div>
+							<?php	
+							$coun_cate++;
+							} ?>
+						</div>
+						<div class="clear"></div>		
+						<?php
+					}	?>
+        <div class="clear"></div>
+    </div>
+		<script>
+jQuery('.hover-twink').hover(function(){
+        jQuery(this).rotater();
+	},function(){
+		jQuery(this).cycle('stop');
+    });
+
+(function(jQuery) {
+  jQuery.fn.rotater = function() {  
+  	 jQuery(this).cycle({ 
+  		  fx:    'fade', 
+   		  speed:  1 
+	 });
+  };
+})(jQuery);
+				</script>
+        <?php echo $this->getChildHtml('footer') ?>
+        <?php echo $this->getChildHtml('before_body_end') ?>
+    </div>
+</div>
+<?php echo $this->getAbsoluteFooter() ?>
+</body>
+</html>

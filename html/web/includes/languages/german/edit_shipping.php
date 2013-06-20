@@ -1,0 +1,3 @@
+<P align=center><FONT color=#000000><STRONG>Fretes e devoluções</STRONG>,&nbsp; se você é o administrador deste site, vá no seu administrador e escolha "editar informações" altere este texto e clique em "gravar"<BR>qualquer dúvida, entre em contato<BR><A href="mailto:webmaster@sualojavirtual.com"><FONT color=#0000ff>webmaster@sualojavirtual.com</FONT></A><BR><A href="http://www.sualojavirtual.com/" target=_blank><FONT color=#ff0000>www.sualojavirtual.com</FONT></A></FONT></P>
+
+<P align=center><A href="http://www.sualojavirtual.com"><FONT color=#ff0000><STRONG></STRONG></FONT></P></A>

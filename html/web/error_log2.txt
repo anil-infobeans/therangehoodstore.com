@@ -1,0 +1,20 @@
+[23-May-2011 09:56:17] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:56:17] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:56:17] gs -sOutputFile=/home/nhsnutri/public_html/gc/243/1J6wyLBdedc.jpg -sDEVICE=jpeg -r300 -dNOPAUSE -dBATCH /home/nhsnutri/public_html/gc/243/1J6wyLBdedc.ps
+[23-May-2011 09:56:17] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:56:17] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:56:17] composite -blend 80 /home/nhsnutri/public_html/images/giftcertificate.gif -geometry +678+865 /home/nhsnutri/public_html/gc/243/1J6wyLBdedc.jpg /home/nhsnutri/public_html/gc/243/4c2dXe1d1B0L2y3w265J01.jpg
+[23-May-2011 09:56:20] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:56:20] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:56:21] 
+[23-May-2011 09:59:54] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:59:54] PHP Warning:  Invalid argument supplied for foreach() in /home/nhsnutri/public_html/includes/functions/gc_output.php on line 45
+[23-May-2011 09:59:54] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:59:54] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:59:54] gs -sOutputFile=/home/nhsnutri/public_html/gc/243/1hzyPVqnTl5.jpg -sDEVICE=jpeg -r300 -dNOPAUSE -dBATCH /home/nhsnutri/public_html/gc/243/1hzyPVqnTl5.ps
+[23-May-2011 09:59:54] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:59:54] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:59:54] composite -blend 80 /home/nhsnutri/public_html/images/giftcertificate.gif -geometry +678+865 /home/nhsnutri/public_html/gc/243/1hzyPVqnTl5.jpg /home/nhsnutri/public_html/gc/243/452lXT1n1q0V2P3y2z5h01.jpg
+[23-May-2011 09:59:54] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:59:54] /home/nhsnutri/public_html/gc/243
+[23-May-2011 09:59:54] 

@@ -1,0 +1,15 @@
+[21-May-2011 21:52:34] PHP Parse error:  syntax error, unexpected '<' in /home/nhsnutri/public_html/includes/functions/html_output.php on line 71
+[21-May-2011 21:52:36] PHP Parse error:  syntax error, unexpected '<' in /home/nhsnutri/public_html/includes/functions/html_output.php on line 71
+[21-May-2011 21:52:38] PHP Parse error:  syntax error, unexpected '<' in /home/nhsnutri/public_html/includes/functions/html_output.php on line 71
+[21-May-2011 21:53:03] PHP Parse error:  syntax error, unexpected '<' in /home/nhsnutri/public_html/includes/functions/html_output.php on line 71
+[21-May-2011 21:53:04] PHP Parse error:  syntax error, unexpected '<' in /home/nhsnutri/public_html/includes/functions/html_output.php on line 71
+[21-May-2011 21:53:06] PHP Parse error:  syntax error, unexpected '<' in /home/nhsnutri/public_html/includes/functions/html_output.php on line 71
+[22-May-2011 02:54:52] PHP Parse error:  syntax error, unexpected ';' in /home/nhsnutri/public_html/126/headeroscommerce_1.php on line 148
+[22-May-2011 02:55:18] PHP Parse error:  syntax error, unexpected ';' in /home/nhsnutri/public_html/126/headeroscommerce_1.php on line 148
+[22-May-2011 02:55:22] PHP Parse error:  syntax error, unexpected ';' in /home/nhsnutri/public_html/126/headeroscommerce_1.php on line 148
+[22-May-2011 03:05:07] PHP Parse error:  syntax error, unexpected ';' in /home/nhsnutri/public_html/126/headeroscommerce_1.php on line 148
+[22-May-2011 02:25:59] PHP Warning:  shipping(includes/modules/shipping/quantitytable1.php) [<a href='function.shipping'>function.shipping</a>]: failed to open stream: No such file or directory in /home/nhsnutri/public_html/includes/classes/shipping.php on line 63
+[22-May-2011 02:25:59] PHP Warning:  shipping(includes/modules/shipping/quantitytable1.php) [<a href='function.shipping'>function.shipping</a>]: failed to open stream: No such file or directory in /home/nhsnutri/public_html/includes/classes/shipping.php on line 63
+[22-May-2011 02:25:59] PHP Warning:  shipping() [<a href='function.include'>function.include</a>]: Failed opening 'includes/modules/shipping/quantitytable1.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nhsnutri/public_html/includes/classes/shipping.php on line 63
+[22-May-2011 02:25:59] PHP Fatal error:  Cannot instantiate non-existent class:  quantitytable1 in /home/nhsnutri/public_html/includes/classes/shipping.php on line 65
+[22-May-2011 04:47:12] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/nhsnutri/public_html/includes/modules/payment/linkpoint_api/lphp.php on line 172

@@ -1,0 +1,25 @@
+[06-Aug-2008 08:11:45] PHP Fatal error:  Call to undefined function  tep_db_query() in /home/startop/public_html/includes/boxes/manufacturers.php on line 13
+[06-Aug-2008 08:18:17] PHP Fatal error:  Class 'infoBoxHeading' not found in /home/startop/public_html/includes/boxes/languages.php on line 20
+[06-Aug-2008 08:28:38] PHP Fatal error:  Call to undefined function  tep_session_is_registered() in /home/startop/public_html/includes/boxes/specials.php on line 18
+[06-Aug-2008 08:32:25] PHP Fatal error:  Class 'infoBoxHeading' not found in /home/startop/public_html/includes/boxes/tell_a_friend.php on line 19
+[06-Aug-2008 08:54:25] PHP Fatal error:  Call to undefined function  tep_db_query() in /home/startop/public_html/includes/boxes/best_sellers.php on line 16
+[06-Aug-2008 08:57:16] PHP Fatal error:  Class 'infoBoxHeading' not found in /home/startop/public_html/includes/boxes/information.php on line 20
+[06-Aug-2008 09:04:42] PHP Fatal error:  Call to undefined function  tep_session_is_registered() in /home/startop/public_html/includes/boxes/order_history.php on line 13
+[06-Aug-2008 09:09:38] PHP Fatal error:  Class 'infoBoxHeading' not found in /home/startop/public_html/includes/boxes/search.php on line 20
+[06-Aug-2008 09:09:44] PHP Fatal error:  Class 'infoBoxHeading' not found in /home/startop/public_html/includes/boxes/categories.php on line 68
+[06-Aug-2008 09:18:19] PHP Fatal error:  Class 'infoBoxHeading' not found in /home/startop/public_html/includes/boxes/shopping_cart.php on line 20
+[06-Aug-2008 09:23:41] PHP Warning:  include_once(includes/application_top.php) [<a href='function.include-once'>function.include-once</a>]: failed to open stream: No such file or directory in /home/startop/public_html/includes/boxes/pages.php on line 3
+[06-Aug-2008 09:23:41] PHP Warning:  include_once() [<a href='function.include'>function.include</a>]: Failed opening 'includes/application_top.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/startop/public_html/includes/boxes/pages.php on line 3
+[06-Aug-2008 09:23:41] PHP Fatal error:  Call to undefined function  tep_db_query() in /home/startop/public_html/includes/boxes/pages.php on line 5
+[06-Aug-2008 09:26:46] PHP Fatal error:  Class 'infoBoxHeading' not found in /home/startop/public_html/includes/boxes/reviews.php on line 20
+[06-Aug-2008 09:40:34] PHP Fatal error:  Call to undefined function  tep_random_select() in /home/startop/public_html/includes/boxes/whats_new.php on line 13
+[06-Aug-2008 22:16:23] PHP Fatal error:  Call to undefined function  tep_db_query() in /home/startop/public_html/includes/boxes/manufacturers.php on line 13
+[06-Aug-2008 22:19:51] PHP Fatal error:  Call to undefined function  tep_db_query() in /home/startop/public_html/includes/boxes/best_sellers.php on line 16
+[06-Aug-2008 22:24:00] PHP Fatal error:  Call to undefined function  tep_session_is_registered() in /home/startop/public_html/includes/boxes/specials.php on line 18
+[06-Aug-2008 22:28:08] PHP Fatal error:  Call to undefined function  tep_session_is_registered() in /home/startop/public_html/includes/boxes/order_history.php on line 13
+[06-Aug-2008 22:37:48] PHP Fatal error:  Call to undefined function  tep_random_select() in /home/startop/public_html/includes/boxes/whats_new.php on line 13
+[07-Aug-2008 10:11:20] PHP Fatal error:  Call to undefined function  tep_db_query() in /home/startop/public_html/includes/boxes/best_sellers.php on line 16
+[07-Aug-2008 10:52:24] PHP Fatal error:  Call to undefined function  tep_session_is_registered() in /home/startop/public_html/includes/boxes/specials.php on line 18
+[07-Aug-2008 11:21:04] PHP Fatal error:  Call to undefined function  tep_random_select() in /home/startop/public_html/includes/boxes/whats_new.php on line 13
+[07-Aug-2008 11:21:29] PHP Fatal error:  Call to undefined function  tep_session_is_registered() in /home/startop/public_html/includes/boxes/order_history.php on line 13
+[07-Aug-2008 11:21:44] PHP Fatal error:  Call to undefined function  tep_db_query() in /home/startop/public_html/includes/boxes/manufacturers.php on line 13

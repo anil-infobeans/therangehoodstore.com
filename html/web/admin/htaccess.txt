@@ -1,0 +1,9 @@
+AuthUserFile /home/content/g/a/s/gastonalberto/html/TA_package/tienda/admin/.htpasswd
+
+AuthName admin
+
+AuthType Basic
+
+
+
+require user newdemo

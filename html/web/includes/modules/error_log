@@ -1,0 +1,14 @@
+[06-Aug-2008 02:43:40] PHP Fatal error:  Call to undefined function  tep_draw_separator() in /home/startop/public_html/includes/modules/product_listing.php on line 24
+[06-Aug-2008 02:45:16] PHP Fatal error:  Call to undefined function  tep_draw_input_field() in /home/startop/public_html/includes/modules/address_book_details.php on line 46
+[06-Aug-2008 02:56:43] PHP Fatal error:  Call to undefined function  tep_db_query() in /home/startop/public_html/includes/modules/upcoming_products.php on line 13
+[06-Aug-2008 02:58:19] PHP Fatal error:  Call to undefined function  tep_draw_separator() in /home/startop/public_html/includes/modules/product_listing_con_manufacturer.php on line 24
+[06-Aug-2008 03:03:22] PHP Fatal error:  Class 'splitPageResults' not found in /home/startop/public_html/includes/modules/product_listing_multi.php on line 13
+[06-Aug-2008 03:10:50] PHP Fatal error:  Call to undefined function  tep_draw_input_field() in /home/startop/public_html/includes/modules/checkout_new_address.php on line 35
+[06-Aug-2008 03:12:49] PHP Fatal error:  Call to undefined function  tep_db_query() in /home/startop/public_html/includes/modules/downloads.php on line 17
+[06-Aug-2008 03:14:18] PHP Fatal error:  Call to undefined function  tep_db_query() in /home/startop/public_html/includes/modules/new_products_antes_precio.php on line 23
+[06-Aug-2008 03:15:37] PHP Fatal error:  Call to undefined function  tep_db_query() in /home/startop/public_html/includes/modules/new_products.php on line 24
+[06-Aug-2008 17:14:47] PHP Fatal error:  Class 'splitPageResults' not found in /home/startop/public_html/includes/modules/product_listing_multi.php on line 13
+[06-Aug-2008 17:27:25] PHP Fatal error:  Class 'splitPageResults' not found in /home/startop/public_html/includes/modules/product_listing_multi.php on line 13
+[06-Aug-2008 17:31:59] PHP Fatal error:  Call to undefined function  tep_db_query() in /home/startop/public_html/includes/modules/upcoming_products.php on line 13
+[07-Aug-2008 03:04:32] PHP Fatal error:  Call to undefined function  tep_db_query() in /home/startop/public_html/includes/modules/upcoming_products.php on line 13
+[07-Aug-2008 03:22:14] PHP Fatal error:  Class 'splitPageResults' not found in /home/startop/public_html/includes/modules/product_listing_multi.php on line 13

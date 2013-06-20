@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+
+<script language="JavaScript" type="text/javascript">
+function getPosition(obj){
+    var topValue= 0,leftValue= 0;
+    while(obj){
+	leftValue+= obj.offsetLeft;
+	topValue+= obj.offsetTop;
+	obj= obj.offsetParent;
+    }
+    finalvalue = leftValue + "," + topValue;
+	alert(finalvalue); 
+
+
+}
+</script>
+
+
+</head>
+
+<body>
+
+
+<div id="divname" style="background-color:#0099CC; margin-top:1000px; margin-left:80px; width:100px; height:80px">
+</div>
+
+<script language="JavaScript" type="text/javascript">
+function getPositiondiv(dividok){
+var d = document.getElementById(dividok);
+getPosition(d);
+}
+getPositiondiv('divname');
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2009 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/**
+ * Product view template
+ *
+ * @see Mage_Catalog_Block_Product_View
+ * @see Mage_Review_Block_Product_View
+ */
+?>
+<?php
+    $_helper = $this->helper('catalog/output');
+    $_product = $this->getProduct();
+    
+?>
+<script type="text/javascript">
+    var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
+</script>
+
+
+
+<div class="cat_right">
+		
+ <div class="product_sec">
+				<div class="product_left">
+				
+				
+				
+				
+					<div class="catImg_Sec">
+					  <?php echo $this->getChildHtml('media') ?>
+						 
+						<div class="clear"></div>
+					</div>
+					<div class="also_aviSec">
+						<h1 class="tex_h1">Also available in:</h1>
+						<ul>
+							<li><a href="#"><img src="<?php echo $this->getSkinUrl(''); ?>images/30img.jpg" alt="" border="0" /></a></li>
+							<li><a href="#"><img src="<?php echo $this->getSkinUrl(''); ?>images/36.jpg" alt="" border="0" /></a></li>
+							<li><a href="#"><img src="<?php echo $this->getSkinUrl(''); ?>images/42.jpg" alt="" border="0" /></a></li>
+							<li><a href="#"><img src="<?php echo $this->getSkinUrl(''); ?>images/48.jpg" alt="" border="0" /></a></li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</div>
+				
+				<div class="product_right">
+					<div class="loest_price"><img src="<?php echo $this->getSkinUrl(''); ?>images/loest_price.png" alt="" /></div>
+					<h1 class="h1_txt"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+					<div class="rate_sec">
+						<div class="left">
+						
+						 <?php  //echo $this->getPriceviewHtml($_product, true); ?>
+						 <?php echo $this->getPriceHtml($_product, false, '_clone') ?>
+						  
+							<div class="txt_pric">$679.95</div>
+							<div class="txt_gray"> List Price: $1,319.95</div>
+						</div>
+						<div class="right">
+							<div class="txt_1">You Save: <span>$106.99</span></div>
+							
+							
+<?php if($_product->isSaleable()): ?>
+  <div class="txt_1">Availability: <span> <?php 
+    $stockLevel = (int) Mage::getModel('cataloginventory/stock_item')->loadByProduct($_product)->getQty();
+        if ($stockLevel <= "0")
+                echo $_product->getResource()->getAttribute('availability')->getFrontend()->getValue($_product);
+    else
+        echo $this->__('In stock');
+  else: ?>
+     <?php echo $this->__('Out of stock') ?> 
+<?php endif; ?> </span></div>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<?php $_wishlistSubmitUrl = $this->helper('wishlist')->getAddUrl($_product); ?>
+					<div class="email">
+						<?php if ($this->canEmailToFriend()): ?><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><img src="<?php echo $this->getSkinUrl(''); ?>images/message_icon.png" alt="" border="0" /> <span>Email to a Friend</span></a><?php endif; ?>
+  						<a href="<?php echo $_wishlistSubmitUrl ?>" onclick="productAddToCartForm.submitLight(this, '<?php echo $_wishlistSubmitUrl ?>'); return false;" ><img src="<?php echo $this->getSkinUrl(''); ?>images/star_icon.png" alt="" border="0" /> <span>Add To Wishlist</span></a>
+						<a href="<?php echo $this->getReviewsUrl() ?>"><img src="<?php echo $this->getSkinUrl(''); ?>images/user_icon.png" alt="" border="0" /> <span>Be the first to review</span></a>
+						
+					</div>
+					
+					<div class="optionl_sec">
+						<div class="text_1">Optional items available for this range hood</div>
+						 
+						
+						 
+						
+					 
+						
+					    <?php echo $this->getChildHtml('other');?>
+
+            <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+            <?php endif;?>
+					 
+					 
+					<div class="cart_img">
+					<img src="<?php echo $this->getSkinUrl(''); ?>images/add_to_cart.png" alt="" border="0" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')" />
+                </div>
+						
+					</div>
+					
+				</div>
+				<div class="clear"></div>
+			</div>  
+			
+			
+			<div class="product_cont">
+		 <?php if (!Mage::getStoreConfig('easy_tabs/general/descriptiontabbed')):?>
+	        <?php echo $this->getChildHtml('description') ?>
+        <?php endif;?>
+        <?php echo $this->getChildHtml('additional') ?>
+        <?php echo $this->getChildHtml('upsell_products') ?>
+        <?php echo $this->getChildHtml('product_additional_data') ?>
+				<div class="pro_had">Product Details</div>
+				<div class="por_divid">
+					<div class="left">Dimension:</div>
+					<div class="right">30x21x42.5(w x d x h)</div>
+					<div class="clear"></div>
+				</div>
+				<div class="por_divid gray_bg">
+					<div class="left">Venting Size: </div>
+					<div class="right">Telescopic Chimney fits up to 9ft ceiling. 6&quot; round duct vent</div>
+					<div class="clear"></div>
+				</div>
+				<div class="por_divid">
+					<div class="left">Airflow (Q/L/M/H): </div>
+					<div class="right">280CFM / 460CFM / 670CFM / 900CFM</div>
+					<div class="clear"></div>
+				</div>
+				<div class="por_divid gray_bg">
+					<div class="left">Lighting:</div>
+					<div class="right">2x35 w Halogen Lights</div>
+					<div class="clear"></div>
+				</div>
+				<div class="por_divid">
+					<div class="left">Noise Level:</div>
+					<div class="right">1.2Sone(43dB) / 2.8Sone(55dB) / 5.0Sone(63dB) / 7.0Sone(68dB)</div>
+					<div class="clear"></div>
+				</div>
+				<div class="por_divid gray_bg">
+					<div class="left">Voltage:</div>
+					<div class="right">120v @ 60 Hz standard USA &amp; CANADA</div>
+					<div class="clear"></div>
+				</div>
+				<div class="por_divid">
+					<div class="left">Motor:</div>
+					<div class="right">Single Chamber Ultra Quiet</div>
+					<div class="clear"></div>
+				</div>
+				<div class="por_divid gray_bg">
+					<div class="left">MountType:</div>
+					<div class="right">Wall Mount</div>
+					<div class="clear"></div>
+				</div>
+				<div class="por_divid">
+					<div class="left">Speeds:</div>
+					<div class="right">4 Speeds</div>
+					<div class="clear"></div>
+				</div>
+				<div class="por_divid gray_bg">
+					<div class="left">Control Type:</div>
+					<div class="right">Touch Sensitive Electronic Control Panel with Heat Sensor and Remote Control</div>
+					<div class="clear"></div>
+				</div>
+				<div class="por_divid">
+					<div class="left">Filters:</div>
+					<div class="right">Stainless Steel Baffle Filter</div>
+					<div class="clear"></div>
+				</div>
+				<div class="por_divid gray_bg">
+					<div class="left">Material:</div>
+					<div class="right">Industry Highest quality Stainless Steel</div>
+					<div class="clear"></div>
+				</div>
+				<div class="por_divid">
+					<div class="left">Warranty:</div>
+					<div class="right">1 year parts from the Manufacturer</div>
+					<div class="clear"></div>
+				</div>
+				<div class="por_divid gray_bg">
+					<div class="left">Features:</div>
+					<div class="right">Seamless Stainless Steel, Brushed Finish <strong>Wirless Remote Control, Heat Sensitive<br />
+  Auto Speed (HSAS)</strong> fucntion controls fan speed automatically</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+	 
+
+
+
+			<div class="pro_imgSec">
+				<div>
+				 <?php //echo $this->getChildHtml('graphmedia') ?><img src="<?php echo $this->getSkinUrl(''); ?>images/product_img.png" alt="" /></div>
+				<div class="theme"><a href="#"><img src="<?php echo $this->getSkinUrl(''); ?>images/download_the_theme.png" alt="" border="0" /></a></div>
+			</div>
+			             
+</div>
+
+

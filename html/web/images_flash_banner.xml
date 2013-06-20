@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes" ?> 
+<images>
+<home name="home">
+<pic>
+  <image>images/banneri.jpg</image> 
+  <caption>notimage</caption> 
+  <thumbnail>images/thumbnails/banneri_162x42.jpg</thumbnail> 
+  </pic>
+<pic>
+  <image>images/banner2.jpg</image> 
+  <caption>notimage</caption> 
+  <thumbnail>images/thumbnails/banner2_162x42.jpg</thumbnail> 
+  </pic>
+  </home>
+  </images>

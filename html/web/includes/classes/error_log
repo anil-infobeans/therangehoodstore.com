@@ -1,0 +1,6 @@
+[06-Aug-2008 08:32:27] PHP Fatal error:  Class 'tableBox' not found in /home/startop/public_html/includes/classes/message_stack.php on line 20
+[06-Aug-2008 08:45:19] PHP Fatal error:  Cannot redeclare session_name() in /home/startop/public_html/includes/classes/sessions.php on line 240
+[06-Aug-2008 22:25:40] PHP Fatal error:  Cannot redeclare session_name() in /home/startop/public_html/includes/classes/sessions.php on line 240
+[06-Aug-2008 22:33:53] PHP Fatal error:  Class 'tableBox' not found in /home/startop/public_html/includes/classes/message_stack.php on line 20
+[07-Aug-2008 11:21:16] PHP Fatal error:  Cannot redeclare session_name() in /home/startop/public_html/includes/classes/sessions.php on line 240
+[07-Aug-2008 11:36:49] PHP Fatal error:  Class 'tableBox' not found in /home/startop/public_html/includes/classes/message_stack.php on line 20

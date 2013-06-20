@@ -1,0 +1,7 @@
+User-agent: * 
+Disallow: /shopping_cart.php
+Disallow: /admin/
+Disallow: /download/
+Disallow: /images/
+Disallow: /includes/
+Disallow: /pub/ 

@@ -1,0 +1,168 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>  
+<?php
+/**
+ * Template for Mage_Page_Block_Html
+ */
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->getLang() ?>" lang="<?php echo $this->getLang() ?>">
+<head>
+<?php echo $this->getChildHtml('head') ?>
+</head>
+<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+<?php echo $this->getChildHtml('after_body_start') ?>
+<div class="wrapper">
+    <?php echo $this->getChildHtml('global_notices') ?>
+    <div class="page">
+        <?php echo $this->getChildHtml('header') ?>
+        
+        
+        
+        
+        <div class="main-container col2-left-layout">
+            <div class="main">
+             <div class="cat_feature">
+            <?php echo $this->getChildHtml('breadcrumbs') ?>
+            <div>
+<style type="text/css">
+.category {
+    margin: 10px 0 0;
+    padding: 0;
+}
+.main {
+    margin: 0;
+}
+.toolbar {
+    display: none;
+}
+.product_range_sec{ display: none;}
+</style>
+  <script type="text/javascript" src="js/homeRotator.js?timestamp=<?php echo (int)(time()/86400)?>"></script>
+  </div>
+  <div class="welcome_sec">
+        <div class="left">
+            <div class="heading">
+                <div class="had_txt">Welcome To The Range Hood Store
+                
+                </div>
+            </div>
+            <div class="text">
+                   <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('welcome-home-page')->toHtml(); ?> 
+            </div>
+            <div><a href="<?php echo $this->getUrl('main-page');?>"><img src="<?php echo $this->getSkinUrl('') ?>images/raed_more.png" alt="" border="0" /></a></div>
+        </div>
+       <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('home-free-shipping-box')->toHtml(); ?>
+        <div class="clear"></div>
+    </div>
+            
+                
+                               
+                   <div class="cat_left"> <?php echo $this->getChildHtml('left') ?>                 
+                  <div class="clear"></div>
+                 <?php //echo $this->getLayout()->createBlock('cms/block')->setBlockId('send-us-picture')->toHtml(); ?>
+                 <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('find-your-stylish')->toHtml(); ?>
+                 <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('style-and-reliability')->toHtml(); ?> 
+               
+              </div>
+                
+                 
+                 
+                <div class="cat_right">              
+                    <?php echo $this->getChildHtml('global_messages') ?>
+                    <?php echo $this->getChildHtml('content') ?>
+                </div>
+                 <div class="clear"></div>
+               
+            </div> </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="range_hod">
+        <div class="heading">
+            <div class="had_txt">Range HooD Categories</div>
+        </div>
+        <div class="hood_section" style="padding-top:8px;">
+            <div class="product">
+            <div><a href="<?php echo $this->getUrl('') ?>island-mounted-range-hoods/thirty-island-range-hoods.html" id="rollover5"></a> </div>
+                <div class="text"><a  href="<?php echo $this->getUrl('') ?>island-mounted-range-hoods/thirty-island-range-hoods.html">30 Inch Island Hoods</a></div>
+            </div>
+            <div class="product">
+                <div><a href="<?php echo $this->getUrl('') ?>island-mounted-range-hoods/36-island-range-hoods.html" id="rollover3"></a></div>
+                <div class="text"><a  href="<?php echo $this->getUrl('') ?>island-mounted-range-hoods/36-island-range-hoods.html">36 Inch Island Hoods</a></div>
+            </div>
+            <div class="product">
+                <div><a href="<?php echo $this->getUrl('') ?>island-mounted-range-hoods/42-island-range-hoods.html" id="rollover7"></a></div>
+                <div class="text"><a href="<?php echo $this->getUrl('') ?>island-mounted-range-hoods/42-island-range-hoods.html">42 Inch Island Hoods</a></div>
+            </div>
+            <div class="product">
+                <div><a href="<?php echo $this->getUrl('') ?>island-mounted-range-hoods/48-island-range-hoods.html" id="rollover8"></a></div>
+                <div class="text"><a href="<?php echo $this->getUrl('') ?>island-mounted-range-hoods/48-island-range-hoods.html">48 Inch Island Hoods</a></div>
+            </div>
+            <div class="product">
+                <div><a href="<?php echo $this->getUrl('') ?>wall-mounted-range-hoods/30-wall-range-hoods.html" id="rollover1"></a></div>
+                <div class="text"><a href="<?php echo $this->getUrl('') ?>wall-mounted-range-hoods/30-wall-range-hoods.html">30 Inch Wall Hoods</a></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="hood_section">
+            <div class="product">
+                <div><a href="<?php echo $this->getUrl('') ?>wall-mounted-range-hoods/36-wall-range-hoods.html" id="rollover2"></a></div>
+                <div class="text"><a href="<?php echo $this->getUrl('') ?>wall-mounted-range-hoods/36-wall-range-hoods.html">36 Inch Wall Hoods</a></div>
+            </div>
+            <div class="product">
+                <div><a href="<?php echo $this->getUrl('') ?>wall-mounted-range-hoods/42-wall-range-hoods-1.html" id="rollover3"></a></div>
+                <div class="text"><a href="<?php echo $this->getUrl('') ?>wall-mounted-range-hoods/42-wall-range-hoods-1.html">42 Inch Wall Hoods</a></div>
+            </div>
+            <div class="product">
+                <div><a href="<?php echo $this->getUrl('') ?>wall-mounted-range-hoods/48-wall-range-hoods.html" id="rollover4"></a></div>
+                <div class="text"><a href="<?php echo $this->getUrl('') ?>wall-mounted-range-hoods/48-wall-range-hoods.html">48 Inch Wall Hoods</a></div>
+            </div>
+            <div class="product">
+                <div><a href="<?php echo $this->getUrl('') ?>wall-mounted-range-hoods/54-wall-range-hoods.html" id="rollover4"></a></div>
+                <div class="text"><a href="<?php echo $this->getUrl('') ?>wall-mounted-range-hoods/54-wall-range-hoods.html">54 Inch Wall Hoods</a></div>
+            </div>
+            <div class="product">
+                <div><a href="<?php echo $this->getUrl('') ?>wall-mounted-range-hoods/60-wall-range-hoods.html" id="rollover4"></a></div>
+                <div class="text"><a href="<?php echo $this->getUrl('') ?>wall-mounted-range-hoods/60-wall-range-hoods.html">60 Inch Wall Hoods</a></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+     
+        
+        <?php echo $this->getChildHtml('footer') ?>
+        <?php echo $this->getChildHtml('before_body_end') ?>
+    </div>
+</div>
+<?php echo $this->getAbsoluteFooter() ?>
+</body>
+</html>

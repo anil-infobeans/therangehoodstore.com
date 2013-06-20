@@ -1,0 +1,294 @@
+.jqueryslidemenu{/*en esta clase se define el tamañano del menu y su fondo si se requiere*/
+
+width:1015px;
+
+font-family: 'Roboto', sans-serif;
+
+font-size:16px;
+
+font-style:italic;
+
+}
+
+
+
+.jqueryslidemenu ul{
+
+position:relative;
+
+margin: 0;
+
+padding: 0;
+
+list-style-type: none;
+
+margin-left:12px;
+
+}
+
+
+
+/*Top level list items*/
+
+.jqueryslidemenu ul li{/*en esta clase se define el tamaño del cada categoria y sus estilos*/
+
+	width:198px;
+
+	position: relative;
+
+	display: inline;
+
+	float: left;
+
+	text-align:center;
+
+	line-height:normal;
+
+	height:42px;
+
+}
+
+
+
+/*Top level menu link items style*/
+
+.jqueryslidemenu ul li a{
+
+	font-family: 'Roboto', sans-serif;
+
+	font-size:18px;
+
+	display: block;
+
+	color:#232323;
+
+	text-decoration: none;
+
+	
+
+	
+
+	/* padding-right:14px; ESTE RIGHT 14 NO FUNCIONA AQUI. DEBERA COLOCARSE EN EL JQUERYSLIDEMENU.JS CUANDO QUIERAS BOTONES SIN ANCHO Y CON SOLO WIDTHS*/
+
+	background-image: url(/126/btn_menuheader_1.png);
+
+	background-repeat:repeat;
+
+	font-weight: normal;
+
+	*padding-bottom:16px;/* IE6 e IE7 */
+
+
+
+	display: table-cell;
+
+	border-collapse:collapse;
+
+	vertical-align: middle;
+
+	width:198px;
+
+	height:42px;
+
+}
+
+
+
+* html .jqueryslidemenu ul li a{ /*IE6 hack to get sub menu links to behave correctly*/
+
+	display: inline-block;
+
+}
+
+
+
+.jqueryslidemenu ul li a:link, .jqueryslidemenu ul li a:visited{
+
+text-decoration: none;
+
+color:#333333;
+
+background-image: url(/126/btn_menuheader_1.png);
+
+background-repeat:repeat;
+
+
+
+}
+
+
+
+.jqueryslidemenu ul li a:hover{
+
+background-image: url(/126/btn_menuheader_2.png);
+
+background-repeat:repeat;
+
+color: #FFFFFF;
+
+text-decoration: none;
+
+
+
+}
+
+	
+
+/*1st sub level menu*/
+
+.jqueryslidemenu ul li ul{
+
+position: absolute;
+
+left: 0px;
+
+display: block;
+
+visibility: hidden;
+
+}
+
+
+
+/*Sub level menu list items (undo style from Top level List Items)*/
+
+.jqueryslidemenu ul li ul li{
+
+display: list-item;
+
+float: none;
+
+height:100%;
+
+}
+
+
+
+
+
+
+
+
+
+/*All subsequent sub menu levels vertical offset after 1st level sub menu */
+
+.jqueryslidemenu ul li ul li ul{
+
+top: 0px;
+
+margin-left: 100%;
+
+}
+
+
+
+/* Sub level menu links style */
+
+.jqueryslidemenu ul li ul li a{ 
+
+font-family: 'Roboto', sans-serif;
+
+font-size:12px;
+
+width: 198px; /*width of sub menus*/
+
+padding-bottom:7px;
+
+padding-top:7px;
+
+padding-left:10px;
+
+padding-right:10px;
+
+height:100%; 
+
+text-align:left;
+
+color:#333333;
+
+background-color:#FFE051;
+
+line-height:normal;
+
+font-weight: normal;
+
+text-decoration: none;
+
+margin-top:0px;
+
+margin-bottom:0px;
+
+margin-left:0px;
+
+margin-right:0px;
+
+
+
+}
+
+
+
+.jqueryslidemenu ul li ul li a:link, .jqueryslidemenu ul li ul li a:visited{ /*sub menus hover style*/
+
+color:#666;
+
+background-color:#EFEFEF;
+
+text-decoration: none;
+
+line-height:normal;
+
+height:100%;
+
+}
+
+
+
+
+
+.jqueryslidemenu ul li ul li a:hover{ /*sub menus hover style*/
+
+color:#ffffff;
+
+background-color:#ccc;
+
+text-decoration: none;
+
+line-height:normal;
+
+height:100%;
+
+}
+
+
+
+
+
+
+
+/* ######### CSS classes applied to down and right arrow images  ######### */
+
+
+
+.downarrowclass{
+
+position: absolute;
+
+top: 12px;
+
+right: 7px;
+
+}
+
+
+
+.rightarrowclass{
+
+position: absolute;
+
+top: 6px;
+
+right: 5px;
+
+}
+

@@ -1,0 +1,33 @@
+<?php
+    // manually get the toolbar block so we can do the page navigation
+    $toolbar = $this->getToolbarBlock();
+    $toolbar->setCollection($this->_getProductCollection());
+?>
+
+<?php if($toolbar->getCollection()->getSize() && sizeof($toolbar->getPages()) > 1): ?>
+    <div class="pager">
+        <ul>
+            <li class="previous">
+                <?php if ($toolbar->isFirstPage()): ?>
+                    <?php echo $toolbar->__('&laquo; Previous Page') ?>
+                <?php else: ?>
+                    <a href="<?php echo $toolbar->getPreviousPageUrl() ?>"><?php echo $toolbar->__('&laquo; Previous Page') ?></a>
+                <?php endif; ?>
+            </li>
+            <?php foreach ($toolbar->getPages() as $_page): ?>
+                <?php if ($toolbar->isPageCurrent($_page)): ?>
+                    <li class="current"><?php echo $_page ?></li>
+                <?php else: ?>
+                    <li><a href="<?php echo $toolbar->getPageUrl($_page) ?>"><?php echo $_page ?></a></li>
+                <?php endif ?>
+            <?php endforeach;; ?>
+            <li class="next">
+                <?php if ($toolbar->isLastPage()): ?>
+                    <?php echo $toolbar->__('Next Page &raquo;') ?>
+                <?php else: ?>
+                    <a href="<?php echo $toolbar->getNextPageUrl() ?>"><?php echo $toolbar->__('Next Page &raquo;') ?></a>
+                <?php endif; ?>
+            </li>
+        </ul>
+    </div>
+<?php endif; ?>
