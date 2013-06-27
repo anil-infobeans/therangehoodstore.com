@@ -28,10 +28,10 @@ function set_sub_image_background(target, useHover) {
 	var width = parseInt(temp.css("width"));
 	var height = parseInt(temp.css("height"));
 	
-	var img_src = temp.css("background-image").replace("url(","").replace(")","");
-	
+	var img_src = temp.css("background-image").replace("url(","").replace(")","").replace(/"/g,"");
 	var image = new Image();
 	image.src = img_src;
+	
 	image.onload = function() {
 		processImage(image, x, y, width, height, target);
 		jQuery(temp).remove();
