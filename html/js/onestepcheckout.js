@@ -712,3 +712,325 @@ var Payment = Class.create();
         });
     }
 }
+
+var billing = new Billing();
+$("billing:region_id").setAttribute("defaultValue",  jQuery("#region_id_default").val() );
+
+document.observe("dom:loaded", 
+	function() {
+    	$("id_create_account").observe("click", 
+    		function(e) {
+    			var element = e.element();
+		        if(element.checked) {
+		            $("onestepcheckout-li-password").show();
+		        }
+		        else    {
+		            $("onestepcheckout-li-password").hide();
+		        }
+    		}
+    	);
+    }
+);
+
+var shipping = new Shipping();
+$("shipping:region_id").setAttribute("defaultValue",  jQuery("#sh_region_id_default").val());
+
+var payment = new Payment('checkout-payment-method-load', '/checkout/onepage/savePayment');
+
+$$('.cvv-what-is-this').each(function(element){
+    Event.observe(element, 'click', toggleToolTip);
+});
+
+function toggleToolTip(event){
+    if($('payment-tool-tip')){
+        $('payment-tool-tip').setStyle({
+            left: (Event.pointerX(event)-100)+'px',
+            top: (Event.pointerY(event)-300)+'px'
+        });
+        $('payment-tool-tip').toggle();
+    }
+    Event.stop(event);
+}
+
+var checkout = new Checkout();
+$$('#checkout-payment-method-load dt input').invoke('observe', 'click', function(e) {
+
+    var element = e.element();
+    var name = 'payment_form_' + element.getValue();
+    payment.currentMethod = element.getValue();
+    /* Hide all other forms */
+    $$('dd.payment-method').invoke('hide');
+
+    if(element.checked) {
+        var form = $(name);
+        var container = $('container_payment_method_' + element.getValue());
+
+        if(element !== null && container !== null)    {
+            container.show();
+            $(name).show();
+        }
+    }
+});
+
+payment.currentMethod = jQuery("#currentMethod").val();
+
+Event.observe(window, 'load', function() {
+    $('onestepcheckout-coupon-add').observe('click', function(e)    {
+        var coupon = $('id_couponcode').getValue();
+        var couponNotice = $('coupon-notice');
+        couponNotice.hide();
+        if(coupon == '')    {
+            alert('Please enter a valid coupon code.');
+            return;
+        }
+
+        var url = '/onestepcheckout/ajax/add_coupon/';
+        var parameters = {code: coupon};
+        var summary = $$('div.onestepcheckout-summary').first();
+
+        summary.update('<div class="loading-ajax">&nbsp;</div>');
+
+        new Ajax.Request(url, {
+            method: 'post',
+            parameters: parameters,
+            onSuccess: function(transport) {
+                if(transport.status == 200) {
+
+                    var response = transport.responseText.evalJSON();
+
+                    if(response.success) {
+                        summary.update(response.summary);
+                        couponNotice.update(response.message);
+                        couponNotice.removeClassName('error-msg');
+                        couponNotice.addClassName('success-msg');
+                        couponNotice.show();
+                        /* Show remove button */
+                        $('onestepcheckout-coupon-remove').show();
+                    }
+                    else    {
+                        summary.update(response.summary);
+                        couponNotice.update(response.message);
+                        couponNotice.removeClassName('success-msg');
+                        couponNotice.addClassName('error-msg');
+                        couponNotice.show();
+                        /* Hide remove button */
+                        $('onestepcheckout-coupon-remove').hide();
+                    }
+                }
+            }
+        });
+    });
+
+    $('onestepcheckout-coupon-remove').observe('click', function(e) {
+        var coupon = $('id_couponcode').getValue();
+        var couponNotice = $('coupon-notice');
+        couponNotice.hide();
+        var url = '/onestepcheckout/ajax/add_coupon/';
+        var parameters = {code: coupon, remove: '1'};
+        var summary = $$('div.onestepcheckout-summary').first();
+
+        summary.update('<div class="loading-ajax">&nbsp;</div>');
+
+        new Ajax.Request(url, {
+            method: 'post',
+            parameters: parameters,
+            onSuccess: function(transport)  {
+                if(transport.status == 200) {
+                    var response = transport.responseText.evalJSON();
+
+                    if(response.success){
+                        $('id_couponcode').setValue('')
+                        $('onestepcheckout-coupon-remove').hide();
+                    }
+                    var summary = $$('div.onestepcheckout-summary').first();
+
+                    summary.hide();
+                    summary.update(response.summary);
+                    summary.show();
+
+                    couponNotice.hide();
+                    couponNotice.update(response.message);
+                    couponNotice.removeClassName('error-msg');
+                    couponNotice.addClassName('success-msg');
+                    couponNotice.show();
+                }
+            }
+        });
+    });
+});
+
+if (jQuery("#showLoginLink").val() == "true") {
+	
+	var login_popup;
+	Event.observe(window, 'load', function() {
+
+	    var button = $('onestepcheckout-login-button');
+	    var loginButtonFunction = function(e) {
+
+	        /* Hide form and display loading */
+	        var table = $('onestepcheckout-login-table');
+	        var loading = $('onestepcheckout-login-loading');
+	        var error = $('onestepcheckout-login-error');
+
+	        table.hide();
+	        error.hide();
+	        loading.show();
+
+
+	        var form = $('onestepcheckout-login-form');
+	        var url = '/onestepcheckout/ajax/login/';
+	        new Ajax.Request(url, {
+	            parameters: form.serialize(true),
+	            method: 'POST',
+	            onComplete: function(transport) {
+	                if(transport.status == 200) {
+	                    var result = transport.responseText.evalJSON();
+
+	                    if(!result.success) {
+	                        loading.hide();
+
+	                        error.update(result.error);
+	                        error.show();
+
+	                        table.show();
+	                    }
+	                    else    {
+	                        // Successfully logged in user, now reload page
+	                        //window.location.reload(true);
+	                        window.location=window.location;
+	                    }
+	                }
+	            }
+	        })
+	    };
+
+	    var onkeypressHandler = function(event) {
+	        if(event.keyCode == Event.KEY_RETURN)  {
+	           event.preventDefault();
+	           loginButtonFunction();
+	        }
+	    };
+
+	    login_popup = new OneStepCheckout_Popup('onestepcheckout-login-popup','onestepcheckout-login-link', 'div#onestepcheckout-login-popup p.close a', function() {
+	        /* Callback for closing the popup */
+	        Event.stopObserving(document, 'keypress', onkeypressHandler);
+	    }, function() {
+	        /* Callback for opening the popup */
+	        Event.observe(document, 'keypress', onkeypressHandler);
+
+	        /* Reset error messages and state */
+	        $('onestepcheckout-login-error').hide();
+	        $('onestepcheckout-forgot-error').hide();
+	        $('onestepcheckout-login-popup-contents-forgot').hide();
+	        $('onestepcheckout-login-popup-contents-login').show();
+
+
+	    });
+
+	    button.observe('click', loginButtonFunction);
+
+	    $('onestepcheckout-forgot-password-link').observe('click', function(e)  {
+	        Event.stop(e);
+	        $('onestepcheckout-login-error').hide();
+	        $('onestepcheckout-login-popup-contents-login').hide();
+	        $('onestepcheckout-login-popup-contents-forgot').show();
+
+	    });
+
+	    $('onestepcheckout-return-login-link').observe('click', function(e) {
+	        Event.stop(e);
+	        $('onestepcheckout-forgot-error').hide();
+	        $('onestepcheckout-login-popup-contents-forgot').hide();
+	        $('onestepcheckout-login-popup-contents-login').show();
+
+	    });
+
+	    var forgot_password_button = $('onestepcheckout-forgot-button');
+
+	    forgot_password_button.observe('click', function(e) {
+
+	        var table = $('onestepcheckout-forgot-table');
+	        var loading = $('onestepcheckout-forgot-loading');
+	        var error = $('onestepcheckout-forgot-error');
+	        var success = $('onestepcheckout-forgot-success');
+	        var email = $('id_onestepcheckout_email').getValue();
+
+	        if(email != '') {
+
+	            table.hide();
+	            error.hide();
+	            loading.show();
+
+	            var url = '/onestepcheckout/ajax/forgotPassword/';
+	            var parameters = { email: email };
+
+	            new Ajax.Request(url, {
+	                method: 'post',
+	                parameters: parameters,
+	                onSuccess: function(transport)  {
+	                    var result = transport.responseText.evalJSON();
+
+	                    if(result.success)  {
+	                         loading.hide();
+	                         success.show();
+	                    }
+	                    else    {
+	                        error.update('Please enter a registered email address.');
+	                        error.show();
+	                        table.show();
+	                        loading.hide();
+	                    }
+	                }
+	            });
+
+	        }
+	        else    {
+	            alert('Please enter a valid email address');
+	        }
+	    });
+
+
+	});	
+}
+
+if (jQuery("#validEmail").val() == "true") {
+	$('billing:email').observe('blur', function(e)    {
+	    var url = '/onestepcheckout/ajax/check_email';
+	    var email = e.element().getValue();
+	    var parameters = { email: email };
+
+	    new Ajax.Request(url, {
+	        parameters: parameters,
+	        onComplete: function(response)  {
+	            if(response.status == 200)  {
+	                var result = response.responseText.evalJSON().result;
+	                if(result == 'invalid') {
+	                    $('onestepcheckout-email-error-message').update('Invalid email address.');
+	                    $('onestepcheckout-email-error').show();
+	                }
+	                else if(result == 'exists') {
+	                    if (jQuery("#registration_order_without_password").val() != "0") {
+		                    // Remove the password fields if the email exists in database
+		                    $('onestepcheckout-li-password').hide();
+	                    } else {
+		                    $('onestepcheckout-email-error-message').update('Email address already registered. Please <a href="javascript:void(0);" onclick="login_popup.show(); return false;">login now</a> or use a different email address.');;
+		                    $('onestepcheckout-email-error').show();
+		                    // Ask the user to login or change email address
+		                    //login_popup.show();
+		                    $('id_onestepcheckout_username').value = email;
+	                    }
+	                }
+	                else    {
+	                    $('onestepcheckout-email-error').hide();
+	                    $('onestepcheckout-li-password').show();
+	                }
+	            }
+	        }
+	    })
+
+	});	
+}
+
+
+var billingRegionUpdater = new RegionUpdater('billing:country_id', 'billing:region', 'billing:region_id', countryRegions, undefined, 'billing:postcode');
+var shippingRegionUpdater = new RegionUpdater('shipping:country_id', 'shipping:region', 'shipping:region_id', countryRegions, undefined, 'shipping:postcode');

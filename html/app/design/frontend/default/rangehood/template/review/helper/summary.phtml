@@ -36,8 +36,8 @@
             <span class="separator">|</span>
             <a href="<?php echo $this->getReviewsUrl() ?>#review-form"><?php echo $this->__('Add Your Review') ?></a>
         </p>
-          --><span><a href="<?php echo $this->getReviewsUrl() ?>#review-form"><img src="<?php echo $this->getSkinUrl(''); ?>images/user_icon.png" alt="" border="0" /><span><?php echo $this->__('Be the first to review') ?></span></a></span>
+          --><span><a href="<?php echo $this->getReviewsUrl() ?>#review-form"><span class="user_icon"></span><span><?php echo $this->__('Be the first to review') ?></span></a></span>
    
 <?php elseif ($this->getDisplayIfEmpty()): ?>
-    <span><a href="<?php echo $this->getReviewsUrl() ?>#review-form"><img src="<?php echo $this->getSkinUrl(''); ?>images/user_icon.png" alt="" border="0" /><span><?php echo $this->__('Be the first to review') ?></span></a></span>
+    <span><a href="<?php echo $this->getReviewsUrl() ?>#review-form"><span class="user_icon"></span><span><?php echo $this->__('Be the first to review') ?></span></a></span>
 <?php endif; ?>

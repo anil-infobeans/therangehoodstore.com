@@ -49,7 +49,13 @@
                         <input type="checkbox" name="order_items[]" id="reorder-item-<?php echo $_item->getId() ?>" value="<?php echo $_item->getId() ?>" title="<?php echo $this->__('Add to Cart') ?>" class="checkbox validate-one-required-by-name" />
                         <script type="text/javascript">
                         //<![CDATA[
-                            $('reorder-item-<?php echo $_item->getId() ?>').advaiceContainer = 'cart-sidebar-reorder-advice-container';
+	                        if (window.onloadfunctions == null) window.onloadfunctions = [];
+	                        window.onloadfunctions.push(
+	                        	function() {
+	                        		$('reorder-item-<?php echo $_item->getId() ?>').advaiceContainer = 'cart-sidebar-reorder-advice-container';
+	                        	}
+	                        );                        
+                            
                         //]]>
                         </script>
                     <?php endif; ?>
@@ -57,11 +63,20 @@
                 </li>
             <?php endforeach; ?>
             </ol>
-            <script type="text/javascript">decorateList('cart-sidebar-reorder')</script>
+            <script type="text/javascript">
+			//<![CDATA[
+				if (window.onloadfunctions == null) window.onloadfunctions = [];
+				window.onloadfunctions.push(
+					function() {
+						decorateList('cart-sidebar-reorder')					
+					}
+				);                                            
+			//]]>
+			</script>
             <div id="cart-sidebar-reorder-advice-container"></div>
             <div class="actions">
             <div class="order_view_all">
-                <a href="<?php echo $this->getUrl('customer/account') ?>"><?php echo $this->__('View All'); ?> <img border="0" alt="" src="<?php echo $this->getSkinUrl(''); ?>images/arrow_icon.png"></a>
+                <a href="<?php echo $this->getUrl('customer/account') ?>"><?php echo $this->__('View All'); ?> <span class="arrow_icon"></span></a>
                 </div>
                 <?php if ($_showAddButtonFlag): ?>
                     <button type="submit" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
@@ -74,8 +89,11 @@
 </div>
 <?php echo $this->getPagerHtml(); ?>
 <script type="text/javascript">
-//<![CDATA[
-    var reorderFormDetail = new VarienForm('reorder-validate-detail');
-//]]>
+	if (window.onloadfunctions == null) window.onloadfunctions = [];
+	window.onloadfunctions.push(
+		function() {
+			var reorderFormDetail = new VarienForm('reorder-validate-detail');					
+		}
+	);     
 </script>
 <?php endif ?>

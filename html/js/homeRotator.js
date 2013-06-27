@@ -10,19 +10,6 @@ var weekDay 	= d.getDay();
 var days		= parseInt(d.getTime()/86400000)-weekDay+1;
 var displayBanner = new Array();
 
-/*var weekday=new Array(7);
-weekday[0]="Sunday";
-weekday[1]="Monday";
-weekday[2]="Tuesday";
-weekday[3]="Wednesday";
-weekday[4]="Thursday";
-weekday[5]="Friday";
-weekday[6]="Saturday";
-
-console.log(days);
-console.log("Today is "+d.getDate()+" - " + weekday[d.getDay()]+" - last Monday was on "+days);*/
-
-
 if(weekDay == 6 || weekDay == 0 ){
 	//Do Sat/Sun Banner
 	displayBanner = weekendBanner;
@@ -37,5 +24,5 @@ else{
 	displayBanner = evenBanner;
 	}	
 
-document.write('<img src="'+displayBanner[0]+'" border="0" id="bannerImage" alt="'+displayBanner[1]+'" title="'+displayBanner[1]+'" />');
+jQuery("#rotator").html('<img src="'+displayBanner[0]+'" border="0" id="bannerImage" alt="'+displayBanner[1]+'" title="'+displayBanner[1]+'" />');
 

@@ -117,7 +117,7 @@
         </div>
         <div class="buttons-set">
             <p class="back-link"><a href="#" onclick="history.back(); return false;"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
-            <button type="submit" class="button<?php if (!$this->canSend()):?> disabled<?php endif ?>"<?php if (!$this->canSend()):?> disabled="disabled"<?php endif ?>><span><span><?php echo $this->__('Send Email') ?></span></span></button>
+            <button type="submit" class="button<?php if (!$this->canSend()):?> disabled<?php endif ?>"<?php if (!$this->canSend()):?> disabled="disabled"<?php endif ?>><span class="slice" data-targetClass="bkg_btn" class="slice" data-targetClass="bkg_btn"><span class="slice" data-targetClass="bkg_btn"><?php echo $this->__('Send Email') ?></span></span></button>
             <div id="max_recipient_message" style="display:none;">
                 <?php if ($this->getMaxRecipients()): ?>
                   <p class="limit"><?php echo $this->__('Maximum %d email addresses allowed.', $this->getMaxRecipients()) ?></p>
@@ -125,19 +125,24 @@
             </div>
             <?php if (1 < $this->getMaxRecipients()): ?>
                 <p id="add_recipient_button">
-                    <button type="button" onclick="add_recipient();" class="button"><span><span><?php echo $this->__('Add Recipient') ?></span></span></button>
+                    <button type="button" onclick="add_recipient();" class="button"><span class="slice" data-targetClass="bkg_btn"><span class="slice" data-targetClass="bkg_btn"><?php echo $this->__('Add Recipient') ?></span></span></button>
                 </p>
             <?php endif; ?>
         </div>
     </form>
     <script type="text/javascript">
     //<![CDATA[
-        var productSendtofriendForm = new VarienForm('product_sendtofriend_form');
-        productSendtofriendForm.submit = function() {
-            if(this.validator.validate()) {
-                this.form.submit();
-            }
-        }.bind(productSendtofriendForm);
+	    if (window.onloadfunctions == null) window.onloadfunctions = [];
+	    window.onloadfunctions.push(
+	    	function() {
+	            var productSendtofriendForm = new VarienForm('product_sendtofriend_form');
+	            productSendtofriendForm.submit = function() {
+	                if(this.validator.validate()) {
+	                    this.form.submit();
+	                }
+	            }.bind(productSendtofriendForm);
+	    	}
+	    );    	
     //]]>
     </script>
 </div>

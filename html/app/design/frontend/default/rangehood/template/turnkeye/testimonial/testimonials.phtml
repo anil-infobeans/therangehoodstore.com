@@ -40,7 +40,7 @@
     <?php $i = 0;?>
     <?php if ($testimonials->count() > 0): ?>
     <?php foreach ($testimonials as $testimonial): ?>
-    <div><img src="<?php echo $this->getSkinUrl('') ?>images/coma_1.png" alt="" /></div>
+    <div><span class="coma_1"></span></div>
 	<div class="testimonial_<?php $i++; echo (is_int($i/2) ? "r" : "l")?>">
 	    <?php if ($testimonial->getTestimonialImg()): ?>
 	    

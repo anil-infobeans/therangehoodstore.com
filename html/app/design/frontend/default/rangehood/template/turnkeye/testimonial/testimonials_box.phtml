@@ -42,7 +42,7 @@
 <?php $i = 0;?>
 <?php if ($testimonials->count() > 0): ?>
 					<div class="testi_box">
-					<div><img src="<?php echo $this->getSkinUrl('') ?>images/coma_1.png" alt="" /></div>
+					<div><span class="coma_1"></span></div>
 				      <?php foreach ($testimonials as $testimonial): ?>
 								
 									<div class="texCo"><?php echo $testimonial->getTestimonialText(); ?></div>
@@ -53,7 +53,7 @@
 								
 							<?php endforeach; ?>
 							<div class="right">
-							    <a href="<?php echo $this->getUrl('testimonials'); ?>"><?php echo $this->__('View All '); ?><img src="<?php echo $this->getSkinUrl('') ?>images/arrow_icon.png" alt="" border="0" /></a>
+							    <a href="<?php echo $this->getUrl('testimonials'); ?>"><?php echo $this->__('View All '); ?><span class="arrow_icon"></span></a>
 							</div>
 							 <div class="clear"></div>
 							 </div> </div>

@@ -79,14 +79,21 @@
         </li>
     <?php endforeach; ?>
     </ol>
-    <script type="text/javascript">decorateList('products-list', 'none-recursive')</script>
+    <script type="text/javascript">
+	    if (window.onloadfunctions == null) window.onloadfunctions = [];
+	    window.onloadfunctions.push(
+	    	function() {
+	    		decorateList('products-list', 'none-recursive');				
+	    	}
+	    );      
+    </script>
 
     <?php else: ?>
 
     <?php // Grid Mode ?>
 
     <?php $_collectionSize = $_productCollection->count() ?>
-    <?php $_columnCount = $this->getColumnCount(); ?>
+    <?php $_columnCount = 3/*$this->getColumnCount()*/; ?>
     <?php $i=0; foreach ($_productCollection as $_product): ?>
         <?php if ($i++%$_columnCount==0): ?>
         <ul class="products-grid">
@@ -109,7 +116,6 @@
         </ul>
         <?php endif ?>
         <?php endforeach ?>
-        <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
     <?php endif; ?>
 
 <!-- <div class="toolbar-bottom">-->

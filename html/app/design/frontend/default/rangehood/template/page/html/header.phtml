@@ -27,10 +27,8 @@
  * @var Mage_Page_Block_Html_Header $this
  */
 ?>
-
-
-<div class="wel_top_wrap">
-    <div class="wel_top_sec">
+<div id="wel_top_wrap" class="wel_top_wrap slice" data-targetClass="top_had_bg">
+    <div class="wel_top_sec" class="wel_top_wrap slice" data-targetClass="top_had_bg">
         <div class="left">
         <?php if (Mage::getSingleton('customer/session')->isLoggedIn()==0): ?>
             <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('welcome')->toHtml(); ?>
@@ -42,19 +40,10 @@
         <div class="right">
             <div class="top_nav">
                 <ul class="top_list">
-                    <li><a href="<?php echo $this->getUrl('customer/account/') ?>"><img src="<?php echo $this->getSkinUrl('') ?>images/small_icon_1.png" alt="" border="0" /> My Account</a>|</li>
-                    <li><a href="<?php echo $this->getUrl('checkout/cart/') ?>"><img src="<?php echo $this->getSkinUrl('') ?>images/small_icon_2.png" alt="" border="0" /> My Cart</a>|</li>
-                    <li><a href="<?php echo $this->getUrl('onestepcheckout/') ?>"><img src="<?php echo $this->getSkinUrl('') ?>images/small_icon_3.png" alt="" border="0" /> Checkout</a>|</li>
-                    <li><?php if (Mage::getSingleton('customer/session')->isLoggedIn()==0): ?>
-<a href="<?php echo $this->getUrl('customer/account/login') ?>"><img src="<?php echo $this->getSkinUrl('') ?>images/small_icon_4.png" alt="" border="0" /> <?php echo $this->__('Log In') ?></a>
-<?php else: ?>
-<a href="<?php echo $this->getUrl('customer/account/logout') ?>"><img src="<?php echo $this->getSkinUrl('') ?>images/small_icon_4.png" alt="" border="0" /> <?php echo $this->__('Log Out') ?></a>
-<?php endif ?></li>
-                
-<?php //echo $this->getChildHtml('store_language') ?>
-    
-          <?php //echo $this->getChildHtml('topBar') ?>
-    <?php //echo $this->getChildHtml('topContainer'); ?>
+                    <li><a href="<?php echo $this->getUrl('customer/account/') ?>"><span class="small_icon_1"></span> My Account</a>|</li>
+                    <li><a href="<?php echo $this->getUrl('checkout/cart/') ?>"><span class="small_icon_2"></span> My Cart</a>|</li>
+                    <li><a href="<?php echo $this->getUrl('onestepcheckout/') ?>"><span class="small_icon_3"></span> Checkout</a>|</li>
+                    <li><a href="<?php echo (Mage::getSingleton('customer/session')->isLoggedIn()==0) ? $this->getUrl('customer/account/login') : $this->getUrl('customer/account/logout') ?>"><span class="small_icon_4"></span> <?php echo (Mage::getSingleton('customer/session')->isLoggedIn()==0) ? $this->__('Log In') : $this->__('Log Out');?></a></li>
                 </ul>
                 <div class="clear"></div>
             </div>
@@ -62,16 +51,13 @@
         <div class="clear"></div>
     </div>
 </div>
-<div class="logo_wrap">
-    <div class="logo_sec">
+<div class="logo_wrap slice" data-targetClass="logo_bg">
+    <div class="logo_sec slice" data-targetClass="logo_bg">
         <div class="left">
-         <?php if ($this->getIsHomePage()):?>
-        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
-        <?php else:?>
-        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
-        <?php endif?>        
+        	<a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"></a>  
         </div>
         <div class="right">
+        	<span class="phone_icon"></span>
             <div class="phone">
                 <h2>Order By Phone: </h2>
                 <h1><span style="color:#333333;">1-866-528-0571</span></h1>
@@ -80,37 +66,37 @@
         <div class="clear"></div>
     </div>
 </div>
-<div class="navigation_wrap">
-    <div class="navigation_sec">
+<div class="navigation_wrap slice" data-targetClass="nav_70">
+    <div class="navigation_sec slice" data-targetClass="nav_70">
         <div class="left">
             <div class="nav_sec">
                 <ul>
                 <?php 
                 
                 if(Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms'):
-$current_page = Mage::getSingleton('cms/page')->getIdentifier();
-endif;
-
-
-
-
-
-                //echo $this->getChildHtml('topMenu') ?>
-                    <li <?php if(isset($current_page) and $current_page=="home"){?> class="active" <?php } ?>><a href="<?php echo $this->getUrl('') ?>"><span>HOME</span></a></li>
-                    <li <?php if(isset($current_page) and $current_page=="stainless-steel-range-hoods"){?> class="active" <?php } ?>><a href="<?php echo $this->getUrl('') ?>stainless-steel-range-hoods"><span>PRODUCTS</span></a></li>
-                    <li <?php if(isset($current_page) and $current_page=="about-us"){?> class="active" <?php } ?>><a href="<?php echo $this->getUrl('') ?>about-us"><span>ABOUT US</span></a></li>
-                    <li <?php if(isset($current_page) and $current_page=="faqs"){?> class="active" <?php } ?>><a href="<?php echo $this->getUrl('') ?>faqs"><span>FAQS</span></a></li>
-                    <li <?php if(isset($current_page) and $current_page=="contacts"){?> class="active" <?php } ?>><a href="<?php echo $this->getUrl('') ?>contacts"><span>CONTACT US</span></a></li>
+					$current_page = Mage::getSingleton('cms/page')->getIdentifier();
+				endif;
+				$menus = array("home" => "HOME","stainless-steel-range-hoods" => "PRODUCTS","about-us" => "ABOUT US", "faqs" => "FAQS", "contacts" => "CONTACT US");
+				
+				foreach ($menus as $url => $title) {
+					$li_class = (isset($current_page) and $current_page==$url) ? 'class="active"' : "";
+					$a_classes = (isset($current_page) and $current_page==$url) ? 'class="slice" data-targetClass="tool_tip"' : 'class="slice" data-targetClass-Hover="tool_tip"';
+					$span_classes = (isset($current_page) and $current_page==$url) ? 'class="slice" data-targetClass="home_nav"' : 'class="slice" data-targetClass-Hover="home_nav"';
+					if ($url=="home") $url = "";
+				?>
+					<li <?php echo $li_class;?>><a <?php echo $a_classes;?> href="<?php echo $this->getUrl('').$url; ?>"><span <?php echo $span_classes;?>><?php echo $title;?></span></a></li>					
+				<?php 				
+				}
+				?>
                 </ul>
             </div>
         </div>
         <div class="right">
-            <div class="searchBox">
+            <div class="searchBox search">
               <?php echo $this->getLayout()->getBlock('top.search')->toHtml()?> 
             </div>
         </div>
         <div class="clear"></div>
     </div>
 </div> 
-
 <div class="middle_wrap">

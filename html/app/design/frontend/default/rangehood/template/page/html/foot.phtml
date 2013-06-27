@@ -1,0 +1,95 @@
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('') ?>js/jquery-latest.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+jQuery.noConflict();
+//]]>
+</script>
+<?php echo $this->getCssJsHtml() ?>
+
+<script type="text/javascript" src="/js/homeRotator.js"></script>
+       
+<?php echo $this->getChildHtml() ?>
+
+<?php echo $this->helper('core/js')->getTranslatorScript() ?>
+<?php echo $this->getIncludes() ?>
+
+<script>
+	// This code extracts all slices that are to be tiled from the sprites file and 
+	// tiles them.
+	jQuery(document).ready(function(){
+		jQuery(".toggle_h1").click(function () {
+			jQuery(this).toggleClass('tog_act');  
+			jQuery(this).next('div').toggle();
+
+		  });
+		decorateGeneric($$('ul.products-grid'), ['odd','even','first','last']);
+		var searchForm = new Varien.searchForm('search_mini_form', 'search', '<?php echo $this->__('Search entire store here...') ?>');
+		searchForm.initAutocomplete('<?php echo $this->helper('catalogsearch')->getSuggestUrl() ?>', 'search_autocomplete');
+		jQuery(".slice").each(
+			function(index) {
+				if ( jQuery(this).attr("data-targetClass") ) {
+					set_sub_image_background(this);
+				}
+
+				if ( jQuery(this).attr("data-targetClass-Hover") ) {
+					jQuery(this).hover(
+						function() {
+							set_sub_image_background(this, true);
+						},
+						function() {
+							if ( jQuery(this).attr("data-targetClass") ) {
+								set_sub_image_background(this);
+							} else {
+								jQuery(this).css("background-image", "none");
+							}
+						} 
+					);
+				}
+			}
+		);			
+	});	
+</script>
+
+<?php 
+	$currentUrl = explode( "/", $this->helper('core/url')->getCurrentUrl());
+	if ($currentUrl[count($currentUrl)-1] == "contacts" ) {
+?>
+<!-- Contact Form -->
+<script type="text/javascript">
+//<![CDATA[
+    var contactForm = new VarienForm('contactForm', true);
+//]]>
+</script>
+<?php 
+	}
+?>
+<!-- Google Code for Remarketing-All-Visitors Remarketing List -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 960172483;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "8qtPCLXPuwMQw6PsyQM";
+var google_conversion_value = 0;
+
+var pingImg = new Image();
+pingImg.src = "http://googleads.g.doubleclick.net/pagead/viewthroughconversion/960172483/?label=8qtPCLXPuwMQw6PsyQM&amp;guid=ON&amp;script=0&ctc_id=CAIVAgAAAB0CAAAA&ct_cookie_present=false";
+/* ]]> */
+</script>
+<!-- <script type="text/javascript" src="js/conversion.js"></script> -->
+<!--  <script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion.js"></script> -->
+
+<script>
+// THIS BLOCK OF SCRIPT MUST BE LAST TO ASSURE THAT ALL LOAD EVENTS ARE HANDLED CORRECTLY
+// THIS CAN BE MOVED TO THE DATABASE AS THE ABSOLUTE FOOTER FOR ALL PAGES.  THIS RELIES ON 
+// onloadfunctions ARRAY WHICH SHOULD BE TESTED FOR AND POSSIBLY CREATED BEFORE ADDING MORE
+// functions to it
+if (window.onloadfunctions == null) window.onloadfunctions = [];
+var old_onload = window.onload;
+if(old_onload != null && typeof old_onload == 'function') onloadfunctions.splice(0, 0, old_onload);
+window.onload = function() 
+{ 
+	for(var i=0; i < onloadfunctions.length; i++) onloadfunctions[i]();
+}
+</script>

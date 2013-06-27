@@ -76,9 +76,7 @@ $billingFields['country_id'] = '
             <select id="billing:region_id" name="billing[region_id]" title="'.$this->__('State/Province').'" class="validate-select" style="display:none">
                 <option value="">'.$this->__('Please select region, state or province').'</option>
             </select>
-            <script type="text/javascript">
-                $("billing:region_id").setAttribute("defaultValue",  "'.$this->getRegionId().'");
-            </script>
+     		<input id="region_id_default" type="hidden" value="'.$this->getRegionId().'" style="display: none;"/>
             <input type="text" id="billing:region" name="billing[region]" value="'.$this->htmlEscape($this->getRegion()).'"  title="'.$this->__('State/Province').'" class="required-entry input-text" style="display:none" />
         </div>';
     ?>
@@ -161,21 +159,7 @@ $billingFields['country_id'] = '
         <div class="input-box">
             <input id="id_create_account" type="checkbox" name="create_account" value="1" '.((isset($_POST['create_account']) && $_POST['create_account'] == '1') ? ' checked="checked"' : '').' />
             <label for="id_create_account">'.$this->__('Create an account for later use').'</label>
-        </div>
-
-        <script>
-        document.observe("dom:loaded", function() {
-            $("id_create_account").observe("click", function(e) {
-                var element = e.element();
-                if(element.checked) {
-                    $("onestepcheckout-li-password").show();
-                }
-                else    {
-                    $("onestepcheckout-li-password").hide();
-                }
-            });
-        });
-        </script>';
+        </div>';
     ?>
 <?php endif; ?>
 <?php if($helper->showPasswords() && !$this->isCustomerLoggedIn()): ?>

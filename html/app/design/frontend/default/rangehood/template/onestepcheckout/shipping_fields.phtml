@@ -51,9 +51,7 @@ $shippingFields['country_id'] = '
             <select id="shipping:region_id" name="shipping[region_id]" title="'.$this->__('State/Province').'" class="validate-select" style="display:none">
                 <option value="">'.$this->__('Please select region, state or province').'</option>
             </select>
-            <script type="text/javascript">
-                $("shipping:region_id").setAttribute("defaultValue",  "'.$this->getShippingRegionId().'");
-            </script>
+            <input id="sh_region_id_default" type="hidden" value="'.$this->getShippingRegionId().'" style="display: none;" />
             <input type="text" id="shipping:region" name="shipping[region]" value="'.$this->htmlEscape($this->getShippingRegion()).'"  title="'.$this->__('State/Province').'" class="required-entry input-text" style="display:none" />
         </div>';
     ?>

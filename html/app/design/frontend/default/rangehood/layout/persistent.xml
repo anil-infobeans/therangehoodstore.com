@@ -33,6 +33,9 @@
     </customer_logged_out_psc_handle>
 
     <customer_account_login>
+        <reference name="foot">
+            <action method="addJs"><file>mage/persistent.js</file></action>
+        </reference>    
         <reference name="customer_form_login">
             <action method="setTemplate"><template>persistent/customer/form/login.phtml</template></action>
             <block type="persistent/form_remember" name="persistent.remember.me" template="persistent/remember_me.phtml" />
@@ -41,6 +44,9 @@
     </customer_account_login>
 
     <customer_account_create>
+        <reference name="foot">
+            <action method="addJs"><file>mage/persistent.js</file></action>
+        </reference>     
         <reference name="customer_form_register">
             <action method="setTemplate"><template>persistent/customer/form/register.phtml</template></action>
             <block type="persistent/form_remember" name="persistent.remember.me" template="persistent/remember_me.phtml" />
@@ -49,6 +55,9 @@
     </customer_account_create>
 
     <checkout_onepage_index>
+        <reference name="foot">
+            <action method="addJs"><file>mage/persistent.js</file></action>
+        </reference>     
         <reference name="checkout.onepage.login">
             <action method="setTemplate"><template>persistent/checkout/onepage/login.phtml</template></action>
             <block type="persistent/form_remember" name="persistent.remember.me" template="persistent/remember_me.phtml" />

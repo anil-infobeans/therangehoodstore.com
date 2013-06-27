@@ -48,9 +48,11 @@
         </reference>
         <reference name="head">
             <action method="setTitle" translate="title"><title>One Step Checkout</title></action>
-            <action method="addJs"><script>onestepcheckout.js</script></action>
             <action method="addCss"><stylesheet>onestepcheckout/onestepcheckout.css</stylesheet></action>
         </reference>
+        <reference name="foot">
+            <action method="addJs"><script>onestepcheckout.js</script></action>
+        </reference>        
         <reference name="content">
             <block type="onestepcheckout/checkout" name="onestepcheckout.checkout" template="onestepcheckout/checkout.phtml">
                 <block type="onestepcheckout/fields" as="billing_address" name="onestepcheckout.billing.address" template="onestepcheckout/billing_fields.phtml" />

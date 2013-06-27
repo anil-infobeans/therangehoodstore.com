@@ -9,19 +9,18 @@
 <?php $_helper = Mage::helper('catalog/category') ?>
 <?php $_categories = $_helper->getStoreCategories() ?>
 
-
                   <?php if (count($_categories) > 0): ?>
                     <ul  class="MenuBarVertical MenuBarActive">
                       <?php foreach($_categories as $_category): ?>
                     <?php if($_category->getEntityId()!="48" and $_category->getEntityId()!="49"):?>
-                       <li> <a href="<?php echo $_helper->getCategoryUrl($_category) ?>"> <b></b> <?php echo $_category->getName() ?></b></a>
+                       <li> <a href="<?php echo $_helper->getCategoryUrl($_category) ?>"><span class="arrow"></span> <b></b> <?php echo $_category->getName() ?></b></a>
 	                               
 	                                <?php $_category = Mage::getModel('catalog/category')->load($_category->getId()) ?>
 	                                <?php $_subcategories = $_category->getChildrenCategories() ?>
 	                                <?php if (count($_subcategories) > 0): ?>
 	                                <ul class="">
 	                                <?php foreach($_subcategories as $_subcategory): ?>
-	                                <li> <a  href="<?php echo $_helper->getCategoryUrl($_subcategory) ?>"> <?php echo $_subcategory->getName() ?> </a>
+	                                <li> <a href="<?php echo $_helper->getCategoryUrl($_subcategory) ?>"><span class="arrow"></span> <?php echo $_subcategory->getName() ?> </a>
 	                                 </li>
 	                               <?php endforeach; ?>
                                    </ul>

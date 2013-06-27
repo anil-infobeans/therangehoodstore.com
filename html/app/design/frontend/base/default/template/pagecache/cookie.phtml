@@ -24,13 +24,5 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-
-<script type="text/javascript">
-    var lifetime = <?php echo Mage::helper('pagecache')->getNoCacheCookieLifetime(); ?>;
-    var expireAt = Mage.Cookies.expires;
-    if (lifetime > 0) {
-        expireAt = new Date();
-        expireAt.setTime(expireAt.getTime() + lifetime * 1000);
-    }
-    Mage.Cookies.set('<?php echo Mage_PageCache_Helper_Data::NO_CACHE_COOKIE; ?>', 1, expireAt);
-</script>
+<input id="lifetime" type="hidden" value="<?php echo Mage::helper('pagecache')->getNoCacheCookieLifetime(); ?>"/>
+<input id="Cookies" type="hidden" value="<?php echo Mage_PageCache_Helper_Data::NO_CACHE_COOKIE; ?>"/>

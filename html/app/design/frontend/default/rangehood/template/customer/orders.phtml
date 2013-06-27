@@ -54,7 +54,7 @@
             <td>
             
             <div class="right">
-            <a href="<?php echo $this->getUrl('customer/order/view', array('order'=>$order->getOrderId())) ?>"><?php echo $this->__('View Order') ?><img border="0" alt="" src="<?php echo $this->getSkinUrl('');?>images/arrow_icon.png"></a>
+            <a href="<?php echo $this->getUrl('customer/order/view', array('order'=>$order->getOrderId())) ?>"><?php echo $this->__('View Order') ?><span class="arrow_icon"></span></a>
              
 			 </div>
              </td>
@@ -62,7 +62,14 @@
     <?php endforeach ?>
     </tbody>
 </table>
-<script type="text/javascript">decorateTable('my-orders-table')</script>
+<script type="text/javascript">
+if (window.onloadfunctions == null) window.onloadfunctions = [];
+window.onloadfunctions.push(
+	function() {
+		decorateTable('my-orders-table');				
+	}
+);   
+</script>
 <?php else: ?>
     <p><?php echo $this->__('You have placed no orders yet.') ?></p>
 <?php endif ?>

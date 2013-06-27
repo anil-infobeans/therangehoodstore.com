@@ -47,3 +47,37 @@ try {
 } catch (Exception $e) {
     Mage::printException($e);
 }
+
+
+/********************************************************************************************/
+/*  Get an cache the external JS to improve Google PageSpeed Rating                         */
+/********************************************************************************************/
+$googleAdServices = get_url_content("http://www.googleadservices.com/pagead/conversion.js");
+file_put_contents("./js/conversion.js", $googleAdServices);
+
+//$chatService = get_url_content("http://zopim.com/?1HUSTywrBfKF6Rr2hleM4ty9iToVlwo7");
+//file_put_contents("./js/zopim.js", $chatService);
+
+//$avidTrakh = get_url_content("http://reducisaurus.appspot.com/js?url=http://avidtrak.com/login/jss/avidh.php?c=1497");
+//file_put_contents("./js/avidh.js", $avidTrakh);
+
+//$avidTrakf = get_url_content("http://reducisaurus.appspot.com/js?url=http://avidtrak.com/login/jss/avidf.php");
+//file_put_contents("./js/avidf.js", $avidTrakf);
+/********************************************************************************************/
+
+
+
+/**
+ * Helper function for cURL request
+ * 
+ * @param string $URL  the url of the content you wish to retrieve
+ * @return mixed
+ */
+function get_url_content($URL){
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_URL, $URL);
+	$data = curl_exec($ch);
+	curl_close($ch);
+	return $data;
+}

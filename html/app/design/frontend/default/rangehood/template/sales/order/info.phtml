@@ -40,11 +40,18 @@
             <?php if($_link->getUrl()): ?>
                 <li><a href="<?php echo $_link->getUrl() ?>"><?php echo $_link->getLabel() ?></a></li>
             <?php else: ?>
-                <li class="current"><?php echo $_link->getLabel() ?></li>
+                <li class="current" style="background-image: none !important; height: auto; width: auto"><?php echo $_link->getLabel() ?></li>
             <?php endif; ?>
         <?php endforeach; ?>
         </ul>
-        <script type="text/javascript">decorateGeneric($('order-info-tabs').select('LI'),['first','last']);</script>
+        <script type="text/javascript">
+        if (window.onloadfunctions == null) window.onloadfunctions = [];
+        window.onloadfunctions.push(
+        	function() {
+        		decorateGeneric($('order-info-tabs').select('LI'),['first','last']);				
+        	}
+        );          
+        </script>
     </dd>
 </dl>
 <p class="order-date"><?php echo $this->__('Order Date: %s', $this->formatDate($_order->getCreatedAtStoreDate(), 'long')) ?></p>

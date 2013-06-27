@@ -44,16 +44,22 @@
 </form>
 <script type="text/javascript">
 //<![CDATA[
-var discountForm = new VarienForm('discount-coupon-form');
-discountForm.submit = function (isRemove) {
-    if (isRemove) {
-        $('coupon_code').removeClassName('required-entry');
-        $('remove-coupone').value = "1";
-    } else {
-        $('coupon_code').addClassName('required-entry');
-        $('remove-coupone').value = "0";
-    }
-    return VarienForm.prototype.submit.bind(discountForm)();
-}
+if (window.onloadfunctions == null) window.onloadfunctions = [];
+window.onloadfunctions.push(
+	function() {
+		var discountForm = new VarienForm('discount-coupon-form');
+		discountForm.submit = function (isRemove) {
+		    if (isRemove) {
+		        $('coupon_code').removeClassName('required-entry');
+		        $('remove-coupone').value = "1";
+		    } else {
+		        $('coupon_code').addClassName('required-entry');
+		        $('remove-coupone').value = "0";
+		    }
+		    return VarienForm.prototype.submit.bind(discountForm)();
+		}
+	}
+);
+
 //]]>
 </script>

@@ -33,7 +33,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->getLang() ?>" lang="<?php echo $this->getLang() ?>">
 <head>
 <?php echo $this->getChildHtml('head') ?>
+<style type="text/css">
+	.category {
+	    margin: 10px 0 0;
+	    padding: 0;
+	}
+	.main {
+	    margin: 0;
+	}
+	.toolbar {
+	    display: none;
+	}
+	.product_range_sec{ display: none;}
+</style>
 </head>
+<?php flush(); ?>
 <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
 <?php echo $this->getChildHtml('after_body_start') ?>
 <div class="wrapper">
@@ -43,22 +57,7 @@
         <div class="main-container col2-left-layout">
             <div class="main">
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
-                <div  style="padding-bottom:10px;">
-<style type="text/css">
-.category {
-    margin: 10px 0 0;
-    padding: 0;
-}
-.main {
-    margin: 0;
-}
-.toolbar {
-    display: none;
-}
-.product_range_sec{ display: none;}
-</style>
-  <script type="text/javascript" src="/js/homeRotator.js?timestamp=<?php echo (int)(time()/86400)?>"></script>
-  </div>
+                <div id="rotator" style="padding-bottom:10px;"></div>
                  <div class="col-left sidebar"><?php echo $this->getChildHtml('left') ?></div>
                 <div class="col-main">
                     <?php echo $this->getChildHtml('global_messages') ?>
@@ -71,6 +70,7 @@
         <?php echo $this->getChildHtml('before_body_end') ?>
     </div>
 </div>
+<?php echo $this->getChildHtml('foot') ?>
 <?php echo $this->getAbsoluteFooter() ?>
 </body>
 </html>

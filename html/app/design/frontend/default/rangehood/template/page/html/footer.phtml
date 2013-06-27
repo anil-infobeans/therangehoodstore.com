@@ -33,35 +33,31 @@
     <div class="clear"></div>
 </div>
 
-<div id="footer">
-    <div id="footer-1">
-        <div id="footer_clm1">
+<div id="footer" class="slice" data-targetClass="footer_bg">
+    <div id="footer-1" class="slice" data-targetClass="footer_bg">
+        <div id="footer_clm1" class="slice" data-targetClass="footer_dvd">
             <h3 class="fhead">Other links</h3>
        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('cms_footer_links')->toHTML();?>
             <div class="clr"></div>
         </div>
-        <div id="footer_clm2">
+        <div id="footer_clm2" class="slice" data-targetClass="footer_dvd">
             <h3 class="fhead">Let&rsquo;s Talk!</h3>
             <ul class="ft_list">
-                <li class="contac_img">
+                <li class="phone_area">
+                	<span class="phone_img"></span>
                     <p class="call">1-866-528-0571</p>
                 </li>
-                <li class="phon_img"><a href="#">contact@therangehoodstore.com</a></li>
+                <li class="contact_area">
+                	<span class="contac_img"></span>
+                	<a href="#">contact@therangehoodstore.com</a>
+                </li>
             </ul>
         </div>
         <div id="footer_clm3">
             <h3 class="fhead">We Accept Payments From</h3>
-            <div><img src="<?php echo $this->getSkinUrl('') ?>images/paypal.jpg" alt="" width="254" height="44" border="0" usemap="#Map" />
-                <map name="Map" id="Map">
-                    <area shape="rect" coords="8,8,49,34" href="#" />
-                    <area shape="rect" coords="51,8,93,33" href="#" />
-                    <area shape="rect" coords="95,9,135,32" href="#" />
-                    <area shape="rect" coords="139,7,181,32" href="#" />
-                    <area shape="rect" coords="189,9,243,33" href="#" />
-                </map>
-            </div>
-            <div class="lock"><img src="<?php echo $this->getSkinUrl('') ?>images/lock.png" alt="" />Secure Checkout</div>
-            <div><a href="#"><img src="<?php echo $this->getSkinUrl('') ?>images/fed_logo.png" alt="" border="0" /></a></div>
+            <div class="paypal"></div>
+            <div class="lock_container"><span class="lock"></span>Secure Checkout</div>
+            <div><a href="#"><span class="fed_logo"></span></a></div>
         </div>
         <div class="clear"></div>
     </div>
@@ -72,24 +68,4 @@
         <div class="right"><!--Website design and Developed  by <a href="http://www.synapseindia.com/" target="_blank">SYNAPSEINDIA</a>--></div>
         <div class="clear"></div>
     </div>
-    
-    <script language='javascript' src='http://www.avidtrak.com/login/jss/avidf.php'></script> 
-<!-- Google Code for Remarketing-All-Visitors Remarketing List -->
-<script type="text/javascript">
-/* <![CDATA[ */
-var google_conversion_id = 960172483;
-var google_conversion_language = "en";
-var google_conversion_format = "3";
-var google_conversion_color = "ffffff";
-var google_conversion_label = "8qtPCLXPuwMQw6PsyQM";
-var google_conversion_value = 0;
-/* ]]> */
-</script>
-<script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion.js">
-</script>
-<noscript>
-<div style="display:inline;">
-<img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/960172483/?label=8qtPCLXPuwMQw6PsyQM&amp;guid=ON&amp;script=0"/>
-</div>
-</noscript>
 </div>

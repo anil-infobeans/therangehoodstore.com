@@ -98,11 +98,6 @@
                         <select id="region_id" name="region_id" title="<?php echo $this->__('State/Province') ?>" class="validate-select" style="display:none;">
                            <option value=""><?php echo $this->__('Please select region, state or province') ?></option>
                         </select>
-                        <script type="text/javascript">
-                        //<![CDATA[
-                            $('region_id').setAttribute('defaultValue',  "<?php echo $this->getAddress()->getRegionId() ?>");
-                        //]]>
-                        </script>
                         <input type="text" id="region" name="region" value="<?php echo $this->htmlEscape($this->getAddress()->getRegion()) ?>"  title="<?php echo $this->__('State/Province') ?>" class="input-text" />
                     </div>
                 </div>
@@ -144,12 +139,18 @@
     <div class="buttons-set">
         <p class="required"><?php echo $this->__('* Required Fields') ?></p>
         <p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
-        <button type="submit" title="<?php echo $this->__('Save Address') ?>" class="button"><span><span><?php echo $this->__('Save Address') ?></span></span></button>
+        <button type="submit" title="<?php echo $this->__('Save Address') ?>" class="button"><span class="slice" data-targetClass="bkg_btn"><span class="slice" data-targetClass="bkg_btn"><?php echo $this->__('Save Address') ?></span></span></button>
     </div>
 </form>
 <script type="text/javascript">
 //<![CDATA[
-    var dataForm = new VarienForm('form-validate', true);
-    new RegionUpdater('country', 'region', 'region_id', <?php echo $this->helper('directory')->getRegionJson() ?>, undefined, 'zip');
+	if (window.onloadfunctions == null) window.onloadfunctions = [];
+	window.onloadfunctions.push(
+		function() {
+			$('region_id').setAttribute('defaultValue',  "<?php echo $this->getAddress()->getRegionId() ?>");
+		    var dataForm = new VarienForm('form-validate', true);
+		    new RegionUpdater('country', 'region', 'region_id', <?php echo $this->helper('directory')->getRegionJson() ?>, undefined, 'zip');			
+		}
+	);  
 //]]>
 </script>

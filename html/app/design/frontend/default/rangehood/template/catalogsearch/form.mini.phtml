@@ -28,11 +28,5 @@
         <input id="search" type="text" name="<?php echo $this->helper('catalogsearch')->getQueryParamName() ?>" value="Search Product" onfocus="if(this.value=='Search Product') this.value='';" onblur="if(this.value=='') this.value='Search Product';" class="searchBox" />
         <input type="submit" title="<?php echo $this->__('Go') ?>" value="" class="searchBttn" />
         <div id="search_autocomplete" class="search-autocomplete"></div>
-        <script type="text/javascript">
-        //<![CDATA[
-            var searchForm = new Varien.searchForm('search_mini_form', 'search', '<?php echo $this->__('Search entire store here...') ?>');
-            searchForm.initAutocomplete('<?php echo $this->helper('catalogsearch')->getSuggestUrl() ?>', 'search_autocomplete');
-        //]]>
-        </script>
-     
+        <!-- javascript deferred to until footer.phtml -->
 </form>

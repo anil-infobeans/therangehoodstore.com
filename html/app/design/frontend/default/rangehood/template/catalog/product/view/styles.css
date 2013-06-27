@@ -457,7 +457,7 @@ button.button {
 button.button span {
 	float: left;
 	height: 28px;
-	background: transparent url(../images/bkg_btn.png) 0 0 no-repeat;
+	background: 0 0 no-repeat;
 	padding: 0 0 0 6px;
 	font: bold 11px/ 25px Tahoma, Verdana, Arial, sans-serif;
 	text-transform: uppercase;
@@ -5966,7 +5966,7 @@ f /********** Product Prices > */ /* Tier Prices */
 	white-space: nowrap;
 }
 
-.top_list li img {
+.top_list li img, .top_list li span {
 	vertical-align: middle;
 	margin-top: -4px;
 }
@@ -6004,12 +6004,12 @@ f /********** Product Prices > */ /* Tier Prices */
 }
 
 .logo_sec .right {
+	width: 331px;
 	padding: 24px 20px 0 0;
 	float: right;
 }
 
 .logo_sec .right .phone {
-	background: url(../images/phone_icon.png) left top no-repeat;
 	padding: 0px 0px 15px 100px;
 }
 
@@ -6082,7 +6082,7 @@ f /********** Product Prices > */ /* Tier Prices */
 }
 
 .nav_sec ul li a:hover {
-	background: url(../images/tool_tip.png) center bottom no-repeat;
+	background: center bottom no-repeat;
 	color: #4e5a66;
 }
 
@@ -6092,7 +6092,7 @@ f /********** Product Prices > */ /* Tier Prices */
 }
 
 .nav_sec ul li.active a {
-	background: url(../images/tool_tip.png) center bottom no-repeat;
+	background: center bottom no-repeat;
 	color: #4e5a66;
 }
 
@@ -6194,10 +6194,13 @@ f /********** Product Prices > */ /* Tier Prices */
 	float: right;
 }
 
-.free_ship {
-	padding: 1px;
+div.free_ship {
+	background: none !important;
 	margin: 0px;
 	border: 1px solid #d2d7d7;
+	width: inherit;
+	height: inherit;
+	display: block;
 }
 
 .free_ship ul {
@@ -6219,7 +6222,7 @@ f /********** Product Prices > */ /* Tier Prices */
 	padding: 0px;
 	margin: 0px;
 	height: 42px;
-	background: url(../images/free_ship.png) left top repeat-x;
+	background: left top repeat-x;
 	display: block;
 	text-decoration: none;
 	font-size: 14px;
@@ -6232,7 +6235,7 @@ f /********** Product Prices > */ /* Tier Prices */
 	padding: 0px;
 	margin: 0px;
 	height: 42px;
-	background: url(../images/free_ship_h.png) left top repeat-x;
+	background: left top repeat-x;
 	display: block;
 }
 
@@ -6240,13 +6243,13 @@ f /********** Product Prices > */ /* Tier Prices */
 	padding: 0px;
 	margin: 0px;
 	height: 42px;
-	background: url(../images/free_ship_h.png) left top repeat-x;
+	background: left top repeat-x;
 	display: block;
 }
 
-.free_ship ul li a>img {
+.icon_1, .icon_2, .icon_3, .icon_4, .icon_5 {
 	vertical-align: middle;
-	padding: 0 10px 0 3px;
+	margin: 0 10px 0 3px !important;
 	border: 0;
 }
 
@@ -6309,30 +6312,18 @@ f /********** Product Prices > */ /* Tier Prices */
 	line-height: 28px;
 	display: block;
 	text-decoration: none;
-	background: url(../images/arrow.png) 25px 11px no-repeat;
+	background-color: #ffffff;
 	padding: 0px 0px 0px 36px;
 	color: #747474;
 	font-size: 14px;
 }
 
 .category .cat_box ul li a:hover {
-	height: 28px;
-	line-height: 28px;
-	display: block;
-	text-decoration: none;
-	background: #ececec url(../images/arrow.png) 25px 11px no-repeat;
-	padding: 0px 0px 0px 36px;
-	color: #747474;
+	background-color: #ececec;
 }
 
 .category .cat_box ul li.active a {
-	height: 28px;
-	line-height: 28px;
-	display: block;
-	text-decoration: none;
-	background: #ececec url(../images/arrow.png) 25px 11px no-repeat;
-	padding: 0px 0px 0px 36px;
-	color: #747474;
+	background: #ececec;
 }
 
 .testimonial {
@@ -7189,8 +7180,8 @@ a#rollover4:hover {
 .product_right .cart_img { text-align:right; padding:0px; margin:11px 0px 3px 0px;}
 
 .product_cont { width: 100%; float:left; padding:1px; margin:13px 0px 0px 0px; border:1px solid #e0e0e0;}
-.product_cont .pro_had { padding:0px 0px 0px 14px; margin:0px; color:#fefefe; font-size:14px; font-weight:bold; height:29px; line-height:29px; background:#a1a1a1 url(../images/arrow_grey.png) 648px 6px no-repeat;}
-
+.product_cont .pro_had { position: relative; padding:0px 0px 0px 14px; margin:0px; color:#fefefe; font-size:14px; font-weight:bold; height:29px; line-height:29px; background-color:#a1a1a1;}
+.product_cont .pro_had .arrow_grey { position: absolute; top: 6px; left: 648px; }
 .product_cont .por_divid {   float: left; padding:0px; margin:0px; width:671px;}
 .product_cont .por_divid .left { padding:5px 0px 5px 14px; margin:0px; width:178px; float:left; font-size:14px; color:#464646; line-height:18px;}
 .product_cont .por_divid .right { padding:5px 0px 5px 20px; margin:0px; width:458px; float:left; border-left:1px solid #ddd; font-size:14px; color:#464646; line-height:18px;}

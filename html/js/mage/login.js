@@ -1,0 +1,1 @@
+var dataForm = new VarienForm('login-form', true);

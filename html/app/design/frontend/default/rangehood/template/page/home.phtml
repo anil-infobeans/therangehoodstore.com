@@ -39,30 +39,13 @@
 <div class="wrapper">
     <?php echo $this->getChildHtml('global_notices') ?>
     <div class="page">
-        <?php echo $this->getChildHtml('header') ?>
-        
-        
-        
-        
+        <?php echo $this->getChildHtml('header') ?>        
         <div class="main-container col2-left-layout">
             <div class="main">
              <div class="cat_feature">
             <?php echo $this->getChildHtml('breadcrumbs') ?>
             <div>
-<style type="text/css">
-.category {
-    margin: 10px 0 0;
-    padding: 0;
-}
-.main {
-    margin: 0;
-}
-.toolbar {
-    display: none;
-}
-.product_range_sec{ display: none;}
-</style>
-  <script type="text/javascript" src="js/homeRotator.js?timestamp=<?php echo (int)(time()/86400)?>"></script>
+            <div id="rotator" style="padding-bottom:10px;"></div>
   </div>
   <div class="welcome_sec">
         <div class="left">

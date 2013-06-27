@@ -5,13 +5,21 @@ $zopimoptions = Mage::getModel('livechat/livechat')->load(1);
 $zopimoptions = $zopimoptions->_data;
 
 if ($zopimoptions["code"] != "" && $zopimoptions["code"] != "zopim") {
-   echo "
-      <!-- Start of Zopim Live Chat Script -->
+
+	echo "
+<!-- Start of Zopim Live Chat Script -->			
       <script type=\"text/javascript\">
-      document.write(unescape(\"%3Cscript src='\" + document.location.protocol + \"//zopim.com/?".$zopimoptions["code"]."' charset='utf-8' type='text/javascript'%3E%3C/script%3E\"));
-   </script>
-      <!-- End of Zopim Live Chat Script -->
+	  document.write('\\x3Cscript type=\"text/javascript\" src=\"/js/zopim.js\">\\x3C/script>');
+      //document.write(unescape(\"%3Cscript src='\" + document.location.protocol + \"//zopim.com/?".$zopimoptions["code"]."' charset='utf-8' type='text/javascript'%3E%3C/script%3E\"));
+      </script>";	
+   echo "
+   		
+ <script type='text/javascript'>
+   	  
+   	  		
       ";
+
+
    $theoptions = array();
    if ($zopimoptions["lang"] != "" && $zopimoptions["lang"] != "--") {
       if ($zopimoptions["lang"] == "md") {
@@ -19,24 +27,8 @@ if ($zopimoptions["code"] != "" && $zopimoptions["code"] != "zopim") {
       }
       $theoptions[] = " language: '".$zopimoptions["lang"]."'";
    }
-
-   /*
-   if ( isset($current_user) && $zopimoptions["getVisitorInfo"] != "" )
-   {
-      $ul = $current_user->data->first_name;
-      $useremail = $current_user->data->user_email;
-
-      if ($ul!="" && $useremail != "") {
-         $theoptions[] = "
-            name: '$ul',
-            email: '$useremail'
-               ";
-      }
-   }
-   */
    
-   echo '
-      <script type="text/javascript">';
+   
    if (count($theoptions) > 0) {
       echo '$zopim.livechat.set({';
       echo implode(", ", $theoptions);      
@@ -73,6 +65,8 @@ if ($zopimoptions["code"] != "" && $zopimoptions["code"] != "zopim") {
    }
    echo "
       </script>
+   		
+   		<!-- End of Zopim Live Chat Script -->
       ";
 
 }

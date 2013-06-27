@@ -1,0 +1,558 @@
+.s-28, .s-30, .s-36, .s-42, .s-48, .s-54, .s-60, .add_to_cart, .add_to_cart_img, .arrow, .arrow_grey, .arrow_icon, .arrow_left_img, .arrow_right_img, .bck_fed_logo, .bkg_btn, .bkg_rating, .bkg_toolbar, .btn_checkout, .btn_edit, .btn_google_checkout, .btn_paypal_checkout, .btn_proceed_to_checkout, .btn_proceed_to_checkout_dis, .button_h, .calendar, .coma_1, .coma_2, .contac_img, .controlbar-white, .current, .down_arrow_img, .download_the_theme, .fed_logo, .footer_bg, .footer_dvd, .free_ship, .free_ship_h, .home_nav, .i_arrow-top, .i_block-currency, .i_block-subscribe, .i_ma-reviews, .i_ma-tags, .i_msg-error, .i_msg-note, .i_msg-success, .i_notice, .i_pager-next, .i_pager-prev, .i_print, .i_rss, .i_rss-big, .i_search_criteria, .icon_1, .icon_2, .icon_3, .icon_4, .icon_5, .list_f, .lock, .loest_price, .logo, .logo_bg, .logo_email, .logo_print, .magnifier_handle, .message_icon, .my_cart_img, .nav_70, .next_btn, .onestepcheckout-numbers-1, .onestepcheckout-numbers-2, .onestepcheckout-numbers-3, .onestepcheckout-numbers-4, .paypal, .phone_icon, .phone_img, .previous_btn, .raed_more, .search, .small_icon_1, .small_icon_2, .small_icon_3, .small_icon_4, .spacer, .spring, .star_icon, .tool_tip, .top_had_bg, .user_icon, .welcome_bg{
+	background-image: url(../images/sprites.png) !important;
+	background-repeat: no-repeat;
+	display: inline-block;
+}
+
+.s-28{
+	background-position: 0 0;
+	width: 77px;
+	height: 60px;
+}
+
+.s-30{
+	background-position: -84px 0;
+	width: 77px;
+	height: 60px;
+}
+
+.s-36{
+	background-position: -167px 0;
+	width: 77px;
+	height: 60px;
+}
+
+.s-42{
+	background-position: -250px 0;
+	width: 77px;
+	height: 60px;
+}
+
+.s-48{
+	background-position: -329px 0;
+	width: 77px;
+	height: 60px;
+}
+
+.s-54{
+	background-position: -412px 0;
+	width: 77px;
+	height: 60px;
+}
+
+.s-60{
+	background-position: -496px 0;
+	width: 77px;
+	height: 60px;
+}
+
+.add_to_cart{
+	background-position: -577.98291015625px 0;
+	width: 130px;
+	height: 28px;
+}
+
+.add_to_cart_img{
+	background-position: -711px 0;
+	width: 121px;
+	height: 28px;
+}
+
+.arrow{
+	background-position: -885px 0;
+	width: 5px;
+	height: 8px;
+}
+
+.arrow_grey{
+	background-position: -855px 0;
+	width: 18px;
+	height: 18px;
+}
+
+.arrow_icon{
+	background-position: -840px 0;
+	width: 5px;
+	height: 8px;
+}
+
+.arrow_left_img{
+	background-position: 0 -64px ;
+	width: 26px;
+	height: 25px;
+}
+
+.arrow_right_img{
+	background-position: -903px 0;
+	width: 26px;
+	height: 25px;
+}
+
+.bck_fed_logo{
+	background-position: -619px -53px ;
+	width: 255px;
+	height: 41px;
+}
+
+.bkg_btn{
+	background-position: -37px -64px ;
+	width: 571px;
+	height: 28px;
+}
+
+.bkg_rating{
+	background-position: -1px -201px ;
+	width: 14px;
+	height: 213px;
+}
+
+.bkg_toolbar{
+	background-position: -915px -46px ;
+	width: 1px;
+	height: 28px;
+}
+
+.btn_checkout{
+	background-position: 0 -104px ;
+	width: 700px;
+	height: 80px;
+}
+
+.btn_edit{
+	background-position: -892px -52px ;
+	width: 11px;
+	height: 11px;
+}
+
+.btn_google_checkout{
+	background-position: -29px -250px ;
+	width: 166px;
+	height: 26px;
+}
+
+.btn_paypal_checkout{
+	background-position: -29px -201px ;
+	width: 145px;
+	height: 42px;
+}
+
+.btn_proceed_to_checkout{
+	background-position: -712px -157px ;
+	width: 200px;
+	height: 40px;
+}
+
+.btn_proceed_to_checkout_dis{
+	background-position: -712px -106px ;
+	width: 202px;
+	height: 42px;
+}
+
+.button_h{
+	background-position: -241px -201px ;
+	width: 21px;
+	height: 21px;
+}
+
+.calendar{
+	background-position: -274px -204px ;
+	width: 14px;
+	height: 14px;
+}
+
+.coma_1{
+	background-position: -210px -203px ;
+	width: 19px;
+	height: 15px;
+}
+
+.coma_2{
+	background-position: -593px -200px ;
+	width: 19px;
+	height: 15px;
+}
+
+.contac_img{
+	background-position: -546px -195px ;
+	width: 36px;
+	height: 36px;
+}
+
+.controlbar-white{
+	background-position: -620px -204px ;
+	width: 210px;
+	height: 130px;
+}
+
+.current{
+	background-position: -302px -196px ;
+	width: 235px;
+	height: 36px;
+}
+
+.down_arrow_img{
+	background-position: -941px -3px ;
+	width: 9px;
+	height: 5px;
+}
+
+.download_the_theme{
+	background-position: -23px -284px ;
+	width: 147px;
+	height: 156px;
+}
+
+.fed_logo{
+	background-position: -208px -248px ;
+	width: 255px;
+	height: 39px;
+}
+
+.footer_bg{
+	background-position: -886px -202px ;
+	width: 73px;
+	height: 173px;
+}
+
+.footer_dvd{
+	background-position: -844px -205px ;
+	width: 2px;
+	height: 142px;
+}
+
+.free_ship{
+	background-position: -924px -106px ;
+	width: 1px;
+	height: 42px;
+}
+
+.free_ship_h{
+	background-position: -938px -111px ;
+	width: 1px;
+	height: 42px;
+}
+
+.home_nav{
+	background-position: 0 -450px ;
+	width: 236px;
+	height: 64px;
+}
+
+.i_arrow-top{
+	background-position: -921px -162px ;
+	width: 10px;
+	height: 13px;
+}
+
+.i_block-currency{
+	background-position: -943px -162px ;
+	width: 16px;
+	height: 16px;
+}
+
+.i_block-subscribe{
+	background-position: -917px -183px ;
+	width: 16px;
+	height: 16px;
+}
+
+.i_ma-reviews{
+	background-position: -943px -182px ;
+	width: 16px;
+	height: 16px;
+}
+
+.i_ma-tags{
+	background-position: -471px -248px ;
+	width: 16px;
+	height: 16px;
+}
+
+.i_msg-error{
+	background-position: -492px -246px ;
+	width: 16px;
+	height: 16px;
+}
+
+.i_msg-note{
+	background-position: -471px -270px ;
+	width: 16px;
+	height: 16px;
+}
+
+.i_msg-success{
+	background-position: -493px -269px ;
+	width: 16px;
+	height: 16px;
+}
+
+.i_notice{
+	background-position: -542px -264px ;
+	width: 36px;
+	height: 32px;
+}
+
+.i_pager-next{
+	background-position: -560px -247px ;
+	width: 6px;
+	height: 7px;
+}
+
+.i_pager-prev{
+	background-position: -550px -247px ;
+	width: 6px;
+	height: 7px;
+}
+
+.i_print{
+	background-position: -575px -242px ;
+	width: 16px;
+	height: 16px;
+}
+
+.i_rss{
+	background-position: -515px -247px ;
+	width: 12px;
+	height: 12px;
+}
+
+.i_rss-big{
+	background-position: -516px -268px ;
+	width: 20px;
+	height: 20px;
+}
+
+.i_search_criteria{
+	background-position: -533px -246px ;
+	width: 11px;
+	height: 8px;
+}
+
+.icon_1{
+	background-position: -188px -297px ;
+	width: 31px;
+	height: 33px;
+}
+
+.icon_2{
+	background-position: -227px -298px ;
+	width: 31px;
+	height: 33px;
+}
+
+.icon_3{
+	background-position: -190px -411px ;
+	width: 31px;
+	height: 33px;
+}
+
+.icon_4{
+	background-position: -189px -376px ;
+	width: 31px;
+	height: 33px;
+}
+
+.icon_5{
+	background-position: -189px -338px ;
+	width: 31px;
+	height: 33px;
+}
+
+.list_f{
+	background-position: -602px -243px ;
+	width: 9px;
+	height: 8px;
+}
+
+.lock{
+	background-position: -584px -266px ;
+	width: 12px;
+	height: 14px;
+}
+
+.loest_price{
+	background-position: -284px -295px ;
+	width: 101px;
+	height: 101px;
+}
+
+.logo{
+	background-position: -379px -435px ;
+	width: 319px;
+	height: 114px;
+}
+
+.logo_bg{
+	background-position: -859px -205px ;
+	width: 3px;
+	height: 126px;
+}
+
+.logo_email{
+	background-position: 0 -517px ;
+	width: 167px;
+	height: 47px;
+}
+
+.logo_print{
+	background-position: -244px -400px ;
+	width: 132px;
+	height: 47px;
+}
+
+.magnifier_handle{
+	background-position: -265px -301px ;
+	width: 9px;
+	height: 22px;
+}
+
+.message_icon{
+	background-position: -227px -340px ;
+	width: 16px;
+	height: 11px;
+}
+
+.my_cart_img{
+	background-position: -251px -338px ;
+	width: 22px;
+	height: 19px;
+}
+
+.nav_70{
+	background-position: -873px -206px ;
+	width: 1px;
+	height: 70px;
+}
+
+.next_btn{
+	background-position: -225px -365px ;
+	width: 26px;
+	height: 25px;
+}
+
+.onestepcheckout-numbers-1{
+	background-position: -393px -303px ;
+	width: 28px;
+	height: 45px;
+}
+
+.onestepcheckout-numbers-2{
+	background-position: -431px -302px ;
+	width: 28px;
+	height: 45px;
+}
+
+.onestepcheckout-numbers-3{
+	background-position: -467px -302px ;
+	width: 28px;
+	height: 45px;
+}
+
+.onestepcheckout-numbers-4{
+	background-position: -502px -302px ;
+	width: 28px;
+	height: 45px;
+}
+
+.paypal{
+	background-position: -705px -433px ;
+	width: 254px;
+	height: 44px;
+}
+
+.phone_icon{
+	background-position: -736px -344px ;
+	width: 95px;
+	height: 70px;
+}
+
+.phone_img{
+	background-position: -844px -378px ;
+	width: 36px;
+	height: 36px;
+}
+
+.previous_btn{
+	background-position: -889px -385px ;
+	width: 26px;
+	height: 25px;
+}
+
+.raed_more{
+	background-position: -393px -354px ;
+	width: 123px;
+	height: 30px;
+}
+
+.search{
+	background-position: -379px -393px ;
+	width: 329px;
+	height: 33px;
+}
+
+.small_icon_1{
+	background-position: -856px -354px ;
+	width: 14px;
+	height: 15px;
+}
+
+.small_icon_2{
+	background-position: -248px -479px ;
+	width: 16px;
+	height: 14px;
+}
+
+.small_icon_3{
+	background-position: -272px -481px ;
+	width: 20px;
+	height: 16px;
+}
+
+.small_icon_4{
+	background-position: -51px -574px ;
+	width: 11px;
+	height: 15px;
+}
+
+.spacer{
+	background-position: -266px -376px ;
+	width: 1px;
+	height: 1px;
+}
+
+.spring{
+	background-position: -723px -497px ;
+	width: 235px;
+	height: 36px;
+}
+
+.star_icon{
+	background-position: -537px -303px ;
+	width: 13px;
+	height: 13px;
+}
+
+.tool_tip{
+	background-position: -241px -452px ;
+	width: 68px;
+	height: 10px;
+}
+
+.top_had_bg{
+	background-position: -876px -312px;
+	width: 2px;
+	height: 34px;
+}
+
+.user_icon{
+	background-position: -532px -357px ;
+	width: 14px;
+	height: 12px;
+}
+
+.welcome_bg{
+	background-position: 0 -574px ;
+	width: 725px;
+	height: 16px;
+}
+

@@ -33,6 +33,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->getLang() ?>" lang="<?php echo $this->getLang() ?>">
 <head>
 <?php echo $this->getChildHtml('head') ?>
+<style type="text/css">
+	.category {
+	    margin: 10px 0 0;
+	    padding: 0;
+	}
+	.main {
+	    margin: 0;
+	}
+	.toolbar {
+	    display: none;
+	}
+	.product_range_sec{ display: none;}
+</style>
 </head>
 <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
 <?php echo $this->getChildHtml('after_body_start') ?>
@@ -43,22 +56,7 @@
         <div class="main-container col3-layout">
             <div class="main">
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
-                <div  style="padding-bottom:10px;">
-<style type="text/css">
-.category {
-    margin: 10px 0 0;
-    padding: 0;
-}
-.main {
-    margin: 0;
-}
-.toolbar {
-    display: none;
-}
-.product_range_sec{ display: none;}
-</style>
-  <script type="text/javascript" src="/js/homeRotator.js?timestamp=<?php echo (int)(time()/86400)?>"></script>
-  </div>
+				<div id="rotator" style="padding-bottom:10px;"></div>
                 <div class="col-wrapper">
                     <div class="col-main">
                         <?php echo $this->getChildHtml('global_messages') ?>

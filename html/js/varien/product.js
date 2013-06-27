@@ -774,3 +774,357 @@ Product.OptionsPrice.prototype = {
         return formatCurrency(price, this.priceFormat);
     }
 }
+
+//************************************** custom *******************************************
+if (jQuery("#optionPrice")) window.optionsPrice = new Product.OptionsPrice(jQuery("#optionPrice").val());
+var productAddToCartForm = new VarienForm('product_addtocart_form');
+productAddToCartForm.submit = function(button, url) {
+    
+    if (this.validator.validate()) {
+        var form = this.form;
+        var oldUrl = form.action;
+
+        if (url) {
+           form.action = url;
+        }
+        var e = null;
+        try {
+            this.form.submit();
+        } catch (e) {
+        }
+        this.form.action = oldUrl;
+        if (e) {
+            throw e;
+        }
+
+        if (button && button != 'undefined') {
+            button.disabled = true;
+        }
+    }
+}.bind(productAddToCartForm);
+
+productAddToCartForm.submitLight = function(button, url){
+    if(this.validator) {
+        var nv = Validation.methods;
+        delete Validation.methods['required-entry'];
+        delete Validation.methods['validate-one-required'];
+        delete Validation.methods['validate-one-required-by-name'];
+        if (this.validator.validate()) {
+            if (url) {
+                this.form.action = url;
+            }
+            this.form.submit();
+        }
+        Object.extend(Validation.methods, nv);
+    }
+}.bind(productAddToCartForm);
+
+var DateOption = Class.create({
+
+    getDaysInMonth: function(month, year)
+    {
+        var curDate = new Date();
+        if (!month) {
+            month = curDate.getMonth();
+        }
+        if (2 == month && !year) { // leap year assumption for unknown year
+            return 29;
+        }
+        if (!year) {
+            year = curDate.getFullYear();
+        }
+        return 32 - new Date(year, month - 1, 32).getDate();
+    },
+
+    reloadMonth: function(event)
+    {
+        var selectEl = event.findElement();
+        var idParts = selectEl.id.split("_");
+        if (idParts.length != 3) {
+            return false;
+        }
+        var optionIdPrefix = idParts[0] + "_" + idParts[1];
+        var month = parseInt($(optionIdPrefix + "_month").value);
+        var year = parseInt($(optionIdPrefix + "_year").value);
+        var dayEl = $(optionIdPrefix + "_day");
+
+        var days = this.getDaysInMonth(month, year);
+
+        //remove days
+        for (var i = dayEl.options.length - 1; i >= 0; i--) {
+            if (dayEl.options[i].value > days) {
+                dayEl.remove(dayEl.options[i].index);
+            }
+        }
+
+        // add days
+        var lastDay = parseInt(dayEl.options[dayEl.options.length-1].value);
+        for (i = lastDay + 1; i <= days; i++) {
+            this.addOption(dayEl, i, i);
+        }
+    },
+
+    addOption: function(select, text, value)
+    {
+        var option = document.createElement('OPTION');
+        option.value = value;
+        option.text = text;
+
+        if (select.options.add) {
+            select.options.add(option);
+        } else {
+            select.appendChild(option);
+        }
+    }
+});
+dateOption = new DateOption();
+
+if (jQuery("#hasOptions").val() != "0" ) {
+    var optionFileUpload = {
+        productForm : $('product_addtocart_form'),
+        formAction : '',
+        formElements : {},
+        upload : function(element){
+            this.formElements = this.productForm.select('input', 'select', 'textarea', 'button');
+            this.removeRequire(element.readAttribute('id').sub('option_', ''));
+
+            template = '<iframe id="upload_target" name="upload_target" style="width:0; height:0; border:0;"><\/iframe>';
+
+            Element.insert($('option_'+element.readAttribute('id').sub('option_', '')+'_uploaded_file'), {after: template});
+
+            this.formAction = this.productForm.action;
+
+            var baseUrl = jQuery("#baseUrl").val();
+            var urlExt = 'option_id/'+element.readAttribute('id').sub('option_', '');
+
+            this.productForm.action = parseSidUrl(baseUrl, urlExt);
+            this.productForm.target = 'upload_target';
+            this.productForm.submit();
+            this.productForm.target = '';
+            this.productForm.action = this.formAction;
+        },
+        removeRequire : function(skipElementId){
+            for(var i=0; i<this.formElements.length; i++){
+                if (this.formElements[i].readAttribute('id') != 'option_'+skipElementId+'_file' && this.formElements[i].type != 'button') {
+                    this.formElements[i].disabled='disabled';
+                }
+            }
+        },
+        addRequire : function(skipElementId){
+            for(var i=0; i<this.formElements.length; i++){
+                if (this.formElements[i].readAttribute('name') != 'options_'+skipElementId+'_file' && this.formElements[i].type != 'button') {
+                    this.formElements[i].disabled='';
+                }
+            }
+        },
+        uploadCallback : function(data){
+            this.addRequire(data.optionId);
+            $('upload_target').remove();
+
+            if (data.error) {
+
+            } else {
+                $('option_'+data.optionId+'_uploaded_file').value = data.fileName;
+                $('option_'+data.optionId+'_file').value = '';
+                $('option_'+data.optionId+'_file').hide();
+                $('option_'+data.optionId+'').hide();
+                template = '<div id="option_'+data.optionId+'_file_box"><a href="#"><img src="var/options/'+data.fileName+'" alt=""><\/a><a href="#" onclick="optionFileUpload.removeFile('+data.optionId+')" title="Remove file" \/>Remove file<\/a>';
+
+                Element.insert($('option_'+data.optionId+'_uploaded_file'), {after: template});
+            }
+        },
+        removeFile : function(optionId)
+        {
+            $('option_'+optionId+'_uploaded_file').value= '';
+            $('option_'+optionId+'_file').show();
+            $('option_'+optionId+'').show();
+
+            $('option_'+optionId+'_file_box').remove();
+        }
+    }
+    var optionTextCounter = {
+        count : function(field,cntfield,maxlimit){
+            if (field.value.length > maxlimit){
+                field.value = field.value.substring(0, maxlimit);
+            } else {
+                cntfield.innerHTML = maxlimit - field.value.length;
+            }
+        }
+    }
+
+    Product.Options = Class.create();
+    Product.Options.prototype = {
+        initialize : function() {
+            this.config = this;
+            this.reloadPrice();
+            document.observe("dom:loaded", this.reloadPrice.bind(this));
+        },
+        reloadPrice : function() {
+            var config = this.config;
+            var skipIds = [];
+            $$('body .product-custom-option').each(function(element){
+                var optionId = 0;
+                element.name.sub(/[0-9]+/, function(match){
+                    optionId = parseInt(match[0], 10);
+                });
+                if (config[optionId]) {
+                    var configOptions = config[optionId];
+                    var curConfig = {price: 0};
+                    if (element.type == 'checkbox' || element.type == 'radio') {
+                        if (element.checked) {
+                            if (typeof configOptions[element.getValue()] != 'undefined') {
+                                curConfig = configOptions[element.getValue()];
+                            }
+                        }
+                    } else if(element.hasClassName('datetime-picker') && !skipIds.include(optionId)) {
+                        dateSelected = true;
+                        $$('.product-custom-option[id^="options_' + optionId + '"]').each(function(dt){
+                            if (dt.getValue() == '') {
+                                dateSelected = false;
+                            }
+                        });
+                        if (dateSelected) {
+                            curConfig = configOptions;
+                            skipIds[optionId] = optionId;
+                        }
+                    } else if(element.type == 'select-one' || element.type == 'select-multiple') {
+                        if ('options' in element) {
+                            $A(element.options).each(function(selectOption){
+                                if ('selected' in selectOption && selectOption.selected) {
+                                    if (typeof(configOptions[selectOption.value]) != 'undefined') {
+                                        curConfig = configOptions[selectOption.value];
+                                    }
+                                }
+                            });
+                        }
+                    } else {
+                        if (element.getValue().strip() != '') {
+                            curConfig = configOptions;
+                        }
+                    }
+                    if(element.type == 'select-multiple' && ('options' in element)) {
+                        $A(element.options).each(function(selectOption) {
+                            if (('selected' in selectOption) && typeof(configOptions[selectOption.value]) != 'undefined') {
+                                if (selectOption.selected) {
+                                    curConfig = configOptions[selectOption.value];
+                                } else {
+                                    curConfig = {price: 0};
+                                }
+                                optionsPrice.addCustomPrices(optionId + '-' + selectOption.value, curConfig);
+                                optionsPrice.reload();
+                            }
+                        });
+                    } else {
+                        optionsPrice.addCustomPrices(element.id || optionId, curConfig);
+                        optionsPrice.reload();
+                    }
+                }
+            });
+        }
+    }
+    function validateOptionsCallback(elmId, result) {
+        var container = $(elmId).up('ul.options-list');
+        if (result == 'failed') {
+            container.removeClassName('validation-passed');
+            container.addClassName('validation-failed');
+        } else {
+            container.removeClassName('validation-failed');
+            container.addClassName('validation-passed');
+        }
+    }
+    var opConfig = new Product.Options(jQuery("#opConfigVals").val());
+}
+
+decorateGeneric($$('#product-options-wrapper dl'), ['last']);
+
+var lifetime = jQuery("#lifetime").val();
+var expireAt = Mage.Cookies.expires;
+if (lifetime > 0) {
+    expireAt = new Date();
+    expireAt.setTime(expireAt.getTime() + lifetime * 1000);
+}
+Mage.Cookies.set(jQuery("#Cookies").val(), 1, expireAt);
+/*
+jQuery(document).ready(function(){
+    jQuery("a[rel=fancybox],a[rel=fancybox-main]").fancybox({
+		'padding' : 10,
+'margin' : 40,
+'opacity' : 1,
+'scrolling' : 'auto',
+'autoScale' : 1,
+'hideOnOverlayClick' : 1,
+'overlayShow' : 1,
+'overlayOpacity' : 0.7,
+'overlayColor' : '#777',
+'titleShow' : 1,
+'transitionIn' : 'elastic',
+'transitionOut' : 'elastic',
+'speedIn' : 500,
+'speedOut' : 500,
+'changeFade' : 'fast',
+'easingIn' : 'swing',
+'easingOut' : 'swing',
+'showCloseButton' : 1,
+'showNavArrows' : 1,
+'enableEscapeButton' : 1
+	});
+
+});
+
+enUS = {"m":{"wide":["January","February","March","April","May","June","July","August","September","October","November","December"],"abbr":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]}}; // en_US locale reference
+Calendar._DN = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]; // full day names
+Calendar._SDN = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]; // short day names
+Calendar._FD = 0; // First day of the week. "0" means display Sunday first, "1" means display Monday first, etc.
+Calendar._MN = ["January","February","March","April","May","June","July","August","September","October","November","December"]; // full month names
+Calendar._SMN = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]; // short month names
+Calendar._am = "AM"; // am/pm
+Calendar._pm = "PM";
+
+// tooltips
+Calendar._TT = {};
+Calendar._TT["INFO"] = "About the calendar";
+
+Calendar._TT["ABOUT"] =
+"DHTML Date/Time Selector\n" +
+"(c) dynarch.com 2002-2005 / Author: Mihai Bazon\n" +
+"For latest version visit: http://www.dynarch.com/projects/calendar/\n" +
+"Distributed under GNU LGPL. See http://gnu.org/licenses/lgpl.html for details." +
+"\n\n" +
+"Date selection:\n" +
+"- Use the \xab, \xbb buttons to select year\n" +
+"- Use the " + String.fromCharCode(0x2039) + ", " + String.fromCharCode(0x203a) + " buttons to select month\n" +
+"- Hold mouse button on any of the above buttons for faster selection.";
+Calendar._TT["ABOUT_TIME"] = "\n\n" +
+"Time selection:\n" +
+"- Click on any of the time parts to increase it\n" +
+"- or Shift-click to decrease it\n" +
+"- or click and drag for faster selection.";
+
+Calendar._TT["PREV_YEAR"] = "Prev. year (hold for menu)";
+Calendar._TT["PREV_MONTH"] = "Prev. month (hold for menu)";
+Calendar._TT["GO_TODAY"] = "Go Today";
+Calendar._TT["NEXT_MONTH"] = "Next month (hold for menu)";
+Calendar._TT["NEXT_YEAR"] = "Next year (hold for menu)";
+Calendar._TT["SEL_DATE"] = "Select date";
+Calendar._TT["DRAG_TO_MOVE"] = "Drag to move";
+Calendar._TT["PART_TODAY"] = ' (' + "Today" + ')';
+
+// the following is to inform that "%s" is to be the first day of week
+Calendar._TT["DAY_FIRST"] = "Display %s first";
+
+// This may be locale-dependent. It specifies the week-end days, as an array
+// of comma-separated numbers. The numbers are from 0 to 6: 0 means Sunday, 1
+// means Monday, etc.
+Calendar._TT["WEEKEND"] = "0,6";
+
+Calendar._TT["CLOSE"] = "Close";
+Calendar._TT["TODAY"] = "Today";
+Calendar._TT["TIME_PART"] = "(Shift-)Click or drag to change value";
+
+// date formats
+Calendar._TT["DEF_DATE_FORMAT"] = "%b %e, %Y";
+Calendar._TT["TT_DATE_FORMAT"] = "%B %e, %Y";
+
+Calendar._TT["WK"] = "Week";
+Calendar._TT["TIME"] = "Time:";
+*/

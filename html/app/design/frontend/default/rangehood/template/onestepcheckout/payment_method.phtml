@@ -54,7 +54,6 @@ if($helper->settings['hide_nonfree_payment_methods'])   {
 //<![CDATA[
   <?php echo $this->getChildHtml('reward.scripts'); ?>
   <?php echo $this->getChildHtml('customerbalance_scripts'); ?>
-  var payment = new Payment('checkout-payment-method-load', '<?php echo $this->getUrl('checkout/onepage/savePayment') ?>');
 //]]>
 </script>
     <?php if(str_replace('.', '', Mage::getVersion()) > 1600):?>
@@ -91,40 +90,6 @@ if($helper->settings['hide_nonfree_payment_methods'])   {
 <script type="text/javascript">
 //<![CDATA[
 
-$$('.cvv-what-is-this').each(function(element){
-    Event.observe(element, 'click', toggleToolTip);
-});
-
-function toggleToolTip(event){
-    if($('payment-tool-tip')){
-        $('payment-tool-tip').setStyle({
-            left: (Event.pointerX(event)-100)+'px',
-            top: (Event.pointerY(event)-300)+'px'
-        });
-        $('payment-tool-tip').toggle();
-    }
-    Event.stop(event);
-}
-
-var checkout = new Checkout();
-$$('#checkout-payment-method-load dt input').invoke('observe', 'click', function(e) {
-
-    var element = e.element();
-    var name = 'payment_form_' + element.getValue();
-    payment.currentMethod = element.getValue();
-    /* Hide all other forms */
-    $$('dd.payment-method').invoke('hide');
-
-    if(element.checked) {
-        var form = $(name);
-        var container = $('container_payment_method_' + element.getValue());
-
-        if(element !== null && container !== null)    {
-            container.show();
-            $(name).show();
-        }
-    }
-});
 
 <?php if(Mage::helper('onestepcheckout')->isEnterprise() && Mage::helper('customer')->isLoggedIn()):?>
 //if we have a enterprise version we should include this
@@ -144,6 +109,6 @@ if(cBalance){
 //if we have a enterprise version we should include this end
 <?php endif;?>
 
-payment.currentMethod = "<?php echo $this->getQuote()->getPayment()->getMethod() ?>";
 //]]>
 </script>
+<input type="hidden" id="currentMethod" value="<?php echo $this->getQuote()->getPayment()->getMethod() ?>" />
