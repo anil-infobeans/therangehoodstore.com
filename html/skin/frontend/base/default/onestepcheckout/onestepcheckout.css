@@ -385,6 +385,7 @@ div.loading-ajax {
 
 p.onestepcheckout-numbers {
     background-repeat: no-repeat;
+	width: auto;
     height: 35px;
     color: #404040;
     text-transform: uppercase;

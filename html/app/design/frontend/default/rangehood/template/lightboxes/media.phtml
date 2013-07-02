@@ -20,19 +20,6 @@ if($helper->getConfig('lightbox_type') == 'piroboxextended' && !$includeMainImag
 	$mainImageClass = $class . '-main';
 }
 ?>
-<!-- jQuery LightBoxes -->
-    <?php if($helper->getConfig('include_jquery', 'lightboxes_confliction') && $helper->getConfig('include_jquery_in', 'lightboxes_confliction') == 'media'): 	?>
-		<?php echo $this->getChildHtml('jquery_inclusion'); ?>
-	<?php endif; ?>
-
-    <?php if($helper->getConfig('include_lighboxes_in', 'lightboxes_confliction') == 'media'): ?>
-		<?php echo $this->getChildHtml('lightboxes_inclusion'); ?>
-	<?php endif; ?>
-
-	<?php if($helper->getConfig('include_initialization_in', 'lightboxes_confliction') == 'media'): ?>
-		<?php echo $this->getChildHtml('lightboxes_initialization'); ?>
-	<?php endif; ?>
-<!-- //jQuery LightBoxes -->
 <?php
     $_product = $this->getProduct();
     $_helper = $this->helper('catalog/output');

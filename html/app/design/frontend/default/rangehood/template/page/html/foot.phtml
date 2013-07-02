@@ -1,4 +1,12 @@
-<script type="text/javascript" src="<?php echo $this->getSkinUrl('') ?>js/jquery-latest.js"></script>
+<script type="text/javascript" src="http://dev.therangehoodstore.com/js/lightboxes/jQuery/1.7.1/jquery.min.js"></script>
+<?php 
+$helper				= Mage::helper('lightboxes');
+$rel				= $helper->getLightboxRel($helper->getConfig('lightbox_type'));
+$class				= $helper->getLightboxRel($helper->getConfig('lightbox_type'));
+?>
+<script type="text/javascript" src="<?php echo $helper->getLightboxUrl(); ?>/fancybox/jquery.easing-1.3.pack.js"></script>
+<script type="text/javascript" src="<?php echo $helper->getLightboxUrl(); ?>/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+<script type="text/javascript" src="<?php echo $helper->getLightboxUrl(); ?>/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 <script type="text/javascript">
 //<![CDATA[
 jQuery.noConflict();
@@ -46,7 +54,10 @@ jQuery.noConflict();
 					);
 				}
 			}
-		);			
+		);
+		jQuery("a[rel=<?php echo $rel; ?>],a[rel=<?php echo $rel; ?>-main]").fancybox({
+			<?php echo $helper->getFancyboxJsConfig(); ?>
+		});	
 	});	
 </script>
 
@@ -73,8 +84,23 @@ var google_conversion_color = "ffffff";
 var google_conversion_label = "8qtPCLXPuwMQw6PsyQM";
 var google_conversion_value = 0;
 
-var pingImg = new Image();
-pingImg.src = "http://googleads.g.doubleclick.net/pagead/viewthroughconversion/960172483/?label=8qtPCLXPuwMQw6PsyQM&amp;guid=ON&amp;script=0&ctc_id=CAIVAgAAAB0CAAAA&ct_cookie_present=false";
+setTimeout(
+	function() {
+		var pingImg = new Image();
+		pingImg.src = "http://www.googleadservices.com/pagead/conversion/960172483/?label=8qtPCLXPuwMQw6PsyQM&amp;guid=ON&amp;script=0";
+		  		
+	}, 5000
+);
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-28482796-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
 /* ]]> */
 </script>
 <!-- <script type="text/javascript" src="js/conversion.js"></script> -->

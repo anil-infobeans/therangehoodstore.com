@@ -7581,6 +7581,7 @@ p.onestepcheckout-numbers{
     color: #404040;
     font-size: 15px;
     font-weight: bold;
+	width: auto;
     height: 35px;
     padding-left: 38px;
     padding-top: 3px !important;

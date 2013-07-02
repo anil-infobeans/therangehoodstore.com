@@ -146,7 +146,7 @@ RewriteRule ^.+.php$ /bogusfile
     #AddDefaultCharset UTF-8
 
 <IfModule mod_expires.c>
-     <FilesMatch "\.(ico|jpg|jpeg|png|gif|swf|js)$">
+     <FilesMatch "\.(ico|jpg|jpeg|png|gif|swf|js|css)$">
         ExpiresActive On
         ExpiresDefault "access plus 1 year"
         Header append Cache-Control "public"

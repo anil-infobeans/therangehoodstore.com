@@ -1,11 +1,8 @@
 <?php
 $helper = Mage::helper('lightboxes');
-if($helper->getConfig('lightbox_type') == 'fancybox'):
+if(false && $helper->getConfig('lightbox_type') == 'fancybox'):
 ?>
 <!-- FancyBox -->
-<script type="text/javascript" src="<?php echo $helper->getLightboxUrl(); ?>/fancybox/jquery.easing-1.3.pack.js"></script>
-<script type="text/javascript" src="<?php echo $helper->getLightboxUrl(); ?>/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
-<script type="text/javascript" src="<?php echo $helper->getLightboxUrl(); ?>/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo $helper->getLightboxUrl(); ?>/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
 <!-- FancyBox -->
 <?php
